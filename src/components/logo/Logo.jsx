@@ -1,10 +1,10 @@
 import React from "react";
 
-function Logo() {
-  const type = "default";
+function Logo(props) {
   return (
     <div>
-      <h1>{type}</h1>
+      <h1>hello</h1>
+      {props.type}
     </div>
   );
 }
