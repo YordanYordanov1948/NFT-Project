@@ -5,9 +5,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Link from "../../src/components/link/Link";
 
-export default function About() {
-  const type = type;
-
+export default function About(props) {
   return (
     <Container maxWidth="sm">
       <Grid container justifyContent="center">
@@ -15,7 +13,7 @@ export default function About() {
           <Button variant="contained" component={Link} noLinkStyle href="/">
             🏠 Home
           </Button>
-          <Logo type={type} />
+          <Logo type={props.type} />
         </Grid>
       </Grid>
     </Container>
