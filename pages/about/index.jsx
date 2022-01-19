@@ -13,7 +13,7 @@ export default function About() {
           <Button variant="contained" component={Link} noLinkStyle href="/">
             🏠 Home
           </Button>
-          <Logo />
+          <Logo type={"default"} />
         </Grid>
       </Grid>
     </Container>
