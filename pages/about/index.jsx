@@ -1,4 +1,5 @@
 import * as React from "react";
+import Logo from "../../src/components/logo/Logo";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
