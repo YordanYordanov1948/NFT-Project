@@ -1,13 +1,8 @@
 import React from "react";
-import logo from "../../../assets/images/logo-muted.svg";
+import logo from "../../../assets/images/logo.svg";
 
-function Logo() {
-  return (
-    <div>
-      <h1>hello</h1>
-      <img src={logo} alt="logo"></img>
-    </div>
-  );
+function Logo(props) {
+  return <div>{props.type}</div>;
 }
 
 export default Logo;
