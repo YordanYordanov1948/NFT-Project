@@ -1,12 +1,9 @@
 import React from "react";
-import logo from "../../../assets/images/logo.svg";
 
-function Logo(props) {
+function Logo() {
   return (
     <div>
-      {props.type?.map((logo) => {
-        return <img>{logo}</img>;
-      })}
+      <h1>hello</h1>
     </div>
   );
 }
