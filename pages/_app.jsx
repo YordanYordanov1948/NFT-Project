@@ -25,7 +25,6 @@ export default function MyApp(props) {
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
-      <Logo name="type" />
     </CacheProvider>
   );
 }
