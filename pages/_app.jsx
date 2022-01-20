@@ -1,4 +1,5 @@
 import * as React from "react";
+import Logo from "../src/components/logo/Logo";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
@@ -15,6 +16,7 @@ export default function MyApp(props) {
 
   return (
     <CacheProvider value={emotionCache}>
+      <Logo />
       <Head>
         <title>My page</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
