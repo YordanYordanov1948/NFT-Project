@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "../../../assets/images/logo.svg";
-import logomuted from "../../../assets/images/logo-muted.svg";
+import Image from "next/image";
+import logo from "../../../public/images/logo.svg";
+import logomuted from "../../../public/images/logo-muted.svg";
 
-function Logo(props) {
+function Logo() {
   return (
     <div>
-      <h1>hello</h1>
-      <img src={logo} alt="logo" />
-      <img src={logomuted} alt="logomuted" />
+      <Image src={logo} />
+      <Image src={logomuted} />
     </div>
   );
 }
