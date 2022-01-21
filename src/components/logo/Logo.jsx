@@ -1,10 +1,10 @@
 import React from "react";
 
-function Logo({ type }) {
+function Logo() {
   return (
     <div>
-      {type !== "muted" && <img src="images/logo.svg" />}
-      {type == "muted" && <img src="images/logo-muted.svg" />}
+      <img src="images/logo.svg" />
+      <img src="images/logo-muted.svg" />
     </div>
   );
 }
