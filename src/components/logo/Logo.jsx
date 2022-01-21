@@ -4,7 +4,7 @@ function Logo({ type }) {
   return (
     <div>
       <img src="images/logo.svg" />
-      {type && <img src="image/logo-muted.svg" />}
+      {type && <img src="images/logo-muted.svg" />}
     </div>
   );
 }
