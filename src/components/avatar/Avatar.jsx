@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Avatar({ url, verifield = false, size = 90 }) {
+export default function Avatar({ url, verifield = "false", size = 90 }) {
   return (
     <div>
       <div className="avatar">
