@@ -1,6 +1,5 @@
 import Header from "../src/components/header/Header";
-import Avatar from "../src/components/avatar/Avatar";
-
+import Avatar from "../.next/avatar/Avatar";
 export default function Index() {
   return (
     <div>
