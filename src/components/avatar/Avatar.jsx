@@ -1,12 +1,10 @@
 import React from "react";
-import { Badge } from "@mui/material";
 
-function Avatar() {
+function Avatar({ url, verified, size }) {
   return (
     <div className="avatar">
-      <Badge>
-        <img className="badge" src="images/verified.svg" />
-      </Badge>
+      <img className="image" src="images/avatar.png" />
+      <img src="badge" src="images/verified.svg" />
     </div>
   );
 }
