@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Avatar({ url, verified = false, size = "90px" }) {
+export default function Avatar({ url, verified = false, size = 90 }) {
   return (
     <div>
       {verified}
