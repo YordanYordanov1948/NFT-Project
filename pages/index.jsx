@@ -1,4 +1,9 @@
-import Logo from "../src/components/logo/Logo";
+import Header from "../src/components/header/Header";
+
 export default function Index() {
-  return <Logo />;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
