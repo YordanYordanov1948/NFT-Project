@@ -1,13 +1,15 @@
 import React from "react";
 
-function Avatar({ url, size = 90, verified = false }) {
+export default function Avatar({ url, verifield = false, size = 90 }) {
   return (
-    <div className="avatar" style={{ height: { size }, width: { size } }}>
-      <img className="image" src="images/avatar.png" />
-      <img className="badge" src="images/verified.svg" />
-      {verified}
+    <div>
+      <div className="avatar">
+        <img className="image" src="images/avatar.png" />
+      </div>
+      <div>
+        {verifield}
+        <img className="badge " src="images/verified.svg" />
+      </div>
     </div>
   );
 }
-
-export default Avatar;
