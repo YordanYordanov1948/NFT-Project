@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../logo/Logo";
 import Button from "@mui/material/Button";
-import styles from "../example/Example.module.scss";
+import styles from "./Header.module.scss";
 import classNames from "classnames";
 import Container from "@mui/material/Container";
 
