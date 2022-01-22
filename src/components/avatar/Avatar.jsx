@@ -4,8 +4,8 @@ export default function Avatar({ url, verified = false, size = 90 }) {
   return (
     <div>
       {verified}
-      <div className="avatar" style={{ height: { size }, width: { size } }}>
-        <img className="image" src="images/avatar.png" />
+      <div className="avatar" style={{ size }}>
+        <img className="image" src="images/avatar.png" style={{ size }} />
         <img className="badge " src="images/verified.svg" />
       </div>
     </div>
