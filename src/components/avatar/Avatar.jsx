@@ -1,20 +1,13 @@
 import React from "react";
-import styles from "./Avatar.module.scss";
-<<<<<<< HEAD
+import { Badge } from "@mui/material";
 
-=======
->>>>>>> master
-import classNames from "classnames";
-
-function Avatar({ url, verified, size }) {
+function Avatar({ url, verified = false, size }) {
   return (
     <div className="avatar" style={size}>
-<<<<<<< HEAD
       <img className="image" src="images/avatar.png" />
-=======
-      <img className={classNames(styles.image)} src="images/avatar.png" />
->>>>>>> master
-      <img className="badge" src="images/verified.svg" />
+      <Badge verified={verified}>
+        <img className="badge" src="images/verified.svg" />
+      </Badge>
     </div>
   );
 }
