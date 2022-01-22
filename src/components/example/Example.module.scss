@@ -1,14 +1,14 @@
 @use "../../styles/colors";
 
 .wrapper {
-  padding: 100px;
-  background-color: colors.$primary_main;
+  padding: 20px;
+  background-color: colors.$background_paper;
 }
 
 .container {
   display: flex !important;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .paper {
