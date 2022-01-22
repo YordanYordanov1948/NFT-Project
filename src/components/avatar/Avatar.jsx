@@ -4,9 +4,9 @@ function Avatar({ size, url, verified }) {
   return (
     <div className="avatar">
       <img className="image" src="images/avatar.png" alt="avatar" />
-      <Badge className="badge">
+      <Badge>
         {verified === false}
-        <img src="images/verified.svg" />
+        <img className="badge" src="images/verified.svg" />
       </Badge>
     </div>
   );
