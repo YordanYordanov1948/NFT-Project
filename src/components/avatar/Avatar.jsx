@@ -4,7 +4,8 @@ function Avatar({ verified }) {
   return (
     <div className="avatar">
       <img className="image" src="images/avatar.png" />
-      {verified || <img className="badge" src="images/verified.svg" />}
+      <img className="badge" src="images/verified.svg" />
+      {verified == false || verified}
     </div>
   );
 }
