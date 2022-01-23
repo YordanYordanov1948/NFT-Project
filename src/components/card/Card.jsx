@@ -20,7 +20,7 @@ export default function CardComponent({
       <div className={classNames(styles.media)}>
         {mediaUrl}
         <Avatar />
-        <img src="./images/nft.jpg/"></img>
+        <img src="./images/nft.jpg/" className={classNames(styles.img)}></img>
         <div className="likes">
           <IconButton aria-label="add to favorites">
             {millify(likes)}
