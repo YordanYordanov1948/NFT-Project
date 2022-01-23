@@ -1,11 +1,10 @@
 import React from "react";
 
-export default function Avatar({ url, verified = false, size = 90 }) {
-  const style = { size };
+export default function Avatar({ url, verified = false, size }) {
   return (
     <div>
       {verified}
-      <div className="avatar" style={style}>
+      <div className="avatar">
         <img className="image" src="images/avatar.png" />
         <img className="badge " src="images/verified.svg" />
       </div>
