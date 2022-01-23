@@ -17,7 +17,7 @@ export default function CardComponent({
   return (
     <Card className={classNames(styles.card)}>
       {currency}
-      <div className="media">
+      <div className={classNames(styles.media)}>
         {mediaUrl}
         <Avatar />
         <img src="./images/nft.jpg/"></img>
@@ -26,13 +26,13 @@ export default function CardComponent({
             {millify(likes)}
             <FavoriteIcon />
           </IconButton>
+          <div className={classNames(styles.price)}>
+            {" "}
+            ~ {price} {currency}
+          </div>
         </div>
       </div>
       <div className={classNames(styles.title)}>{name}</div>
-      <div className={classNames(styles.price)}>
-        {" "}
-        ~ {price} {currency}
-      </div>
     </Card>
   );
 }
