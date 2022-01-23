@@ -2,7 +2,8 @@ import React from "react";
 import Avatar from "../avatar/Avatar";
 import classNames from "classnames";
 import styles from "./User.module.scss";
-function User({
+
+export default function User({
   name = "",
   info = "",
   avatar = "",
@@ -11,11 +12,12 @@ function User({
 }) {
   return (
     <div className="user">
+      {size}
+      {avatar}
+      {verified}
+      <Avatar />
       <div className={classNames(styles.name)}>{name}</div>
       <div className={classNames(styles.info)}>{info}</div>
-      <Avatar />
     </div>
   );
 }
-
-export default User;
