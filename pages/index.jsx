@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Avatar from "../src/components/avatar/Avatar";
+import Card from "../src/components/card/Card";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Avatar />
+      <Card />
     </div>
   );
 }
