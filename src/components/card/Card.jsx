@@ -17,10 +17,10 @@ export default function CardComponent({
   return (
     <Card className={classNames(styles.card)}>
       {currency}
-      <div className={classNames(styles.media)}>
+      <div className="media">
         {mediaUrl}
         <Avatar />
-        <img src="./images/nft.jpg/" className={classNames(styles.img)}></img>
+        <img src="./images/nft.jpg/" className={classNames(styles.media)}></img>
         <div className="likes">
           <IconButton aria-label="add to favorites">
             {millify(likes)}
