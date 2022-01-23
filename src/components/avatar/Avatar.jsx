@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./Avatar.module.scss";
 
-export default function Avatar({ url, verified = false, size = 90 }) {
+function Avatar({ url, verified = false, size = 90 }) {
   return (
     <div>
       {verified}
@@ -16,3 +16,5 @@ export default function Avatar({ url, verified = false, size = 90 }) {
     </div>
   );
 }
+
+export default Avatar;

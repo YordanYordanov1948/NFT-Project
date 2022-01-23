@@ -1,0 +1,11 @@
+@use "../../styles/colors";
+
+.name {
+  font-size: 1rem;
+  color: $text_primary #ffffff;
+}
+
+.info {
+  font-size: 2rem;
+  color: $text_disabled #8d8da8;
+}
