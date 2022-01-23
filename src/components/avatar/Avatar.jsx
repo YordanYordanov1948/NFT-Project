@@ -11,7 +11,7 @@ function Avatar({ url, verified = false, size = 90 }) {
         style={{ width: size + "px", height: size + "px" }}
       >
         <img className={classNames(styles.image)} src="images/avatar.png" />
-        <img className="badge " src="images/verified.svg" />
+        <img className={classNames(styles.badge)} src="images/verified.svg" />
       </div>
     </div>
   );
