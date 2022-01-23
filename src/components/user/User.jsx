@@ -11,8 +11,7 @@ export default function User({
   verified = false,
 }) {
   return (
-    <div className="user">
-      {size}
+    <div className={classNames(styles.user)}>
       {avatar}
       {verified}
       <Avatar />

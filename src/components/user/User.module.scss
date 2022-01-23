@@ -2,10 +2,14 @@
 
 .name {
   font-size: 1rem;
-  color: $text_primary #ffffff;
+  color: colors.$text_primary #ffffff;
 }
 
 .info {
   font-size: 2rem;
-  color: $text_disabled #8d8da8;
+  color: colors.$text_disabled #8d8da8;
+}
+
+.user {
+  font-size: 1rem;
 }
