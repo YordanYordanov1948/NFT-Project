@@ -1,4 +1,6 @@
 import React from "react";
+import classNames from "classnames";
+import styles from "./Avatar.module.scss";
 
 export default function Avatar({ url, verified = false, size = 90 }) {
   return (
@@ -8,11 +10,7 @@ export default function Avatar({ url, verified = false, size = 90 }) {
         className="avatar"
         style={{ width: size + "px", height: size + "px" }}
       >
-        <img
-          className="image"
-          src="images/avatar.png"
-          style={{ width: 100, height: 100 }}
-        />
+        <img className={classNames(styles.image)} src="images/avatar.png" />
         <img className="badge " src="images/verified.svg" />
       </div>
     </div>
