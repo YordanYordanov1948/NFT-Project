@@ -6,9 +6,9 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import CardComponent from "../card/Card";
 
-export default function Trending({ title, cards = 0 }) {
+export default function Trending({}) {
   return (
-    <Container fixed>
+    <Container>
       <Grid
         container
         direction="row"
@@ -24,10 +24,10 @@ export default function Trending({ title, cards = 0 }) {
         </Select>{" "}
       </Grid>
       <Grid container spacing={4}>
-        <CardComponent name={(title = "Clock")} />
-        <CardComponent name={(title = "DOGE")} />
-        <CardComponent name={(title = "BTC")} />
-        <CardComponent name={(title = "Litecoin")} />
+        <CardComponent title={"Clock"} />
+        <CardComponent title={"Doge"} />
+        <CardComponent title={"BTC"} />
+        <CardComponent title={"Litecoin"} />
       </Grid>
     </Container>
   );
