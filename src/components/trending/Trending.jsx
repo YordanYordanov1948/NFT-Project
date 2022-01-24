@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "@mui/material/Container";
+import { Container } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
@@ -8,9 +8,9 @@ import CardComponent from "../card/Card";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
 
-export default function Trending({ cards }) {
+export default function Trending() {
   return (
-    <Container>
+    <Container fixed>
       <Grid
         container
         direction="row"
@@ -23,10 +23,10 @@ export default function Trending({ cards }) {
           gutterBottom
           className={classNames(styles.typography)}
         >
-          {cards}
+          Trending
         </Typography>
         <Select sx={{ m: 1, width: 300 }} className={classNames(styles.select)}>
-          <MenuItem> {cards}</MenuItem>
+          <MenuItem></MenuItem>
         </Select>
       </Grid>
       <Grid container spacing={4}>
