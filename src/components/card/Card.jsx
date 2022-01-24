@@ -37,15 +37,15 @@ export default function CardComponent({
             className={classNames(styles.media)}
           ></img>
           {timeLeft && (
-            <Countdown date={Date.now() + 5000} renderer={renderer}>
-              <LiveTvIcon />
-              <div className={classNames(styles.badge)}>
+            <div className={classNames(styles.badge)}>
+              <Countdown date={Date.now() + 5000} renderer={renderer}>
+                <LiveTvIcon />
                 <img
                   src="./images/nft.jpg/"
                   className={classNames(styles.media)}
                 ></img>{" "}
-              </div>
-            </Countdown>
+              </Countdown>
+            </div>
           )}
           <div className="likes">
             <IconButton aria-label="add to favorites">
