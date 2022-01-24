@@ -8,7 +8,7 @@ import CardComponent from "../card/Card";
 
 export default function Trending({ cards = "Trending" }) {
   return (
-    <Container className="Container">
+    <Container>
       <Grid
         container
         direction="row"
