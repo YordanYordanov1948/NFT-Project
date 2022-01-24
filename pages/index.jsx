@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Card from "../src/components/card/Card";
+import Trending from "../src/components/trending/Trending";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Card />
+      <Trending />
     </div>
   );
 }
