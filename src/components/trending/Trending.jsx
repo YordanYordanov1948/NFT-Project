@@ -9,7 +9,7 @@ import CardComponent from "../card/Card";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = "default" }) {
+export default function Trending({ cards = [] }) {
   return (
     <div className={classNames(styles.wrapper)}>
       <Container className={classNames(styles.container)} maxWidth="xl">
