@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Auctions from "../src/components/auctions/Auctions";
+import Footer from "../src/components/footer/Footer";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Auctions />
+      <Footer />
     </div>
   );
 }
