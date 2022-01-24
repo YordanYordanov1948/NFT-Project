@@ -8,7 +8,7 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 
 export default function CardComponent({
-  name,
+  title,
   likes = 0,
   mediaUrl,
   price,
@@ -26,13 +26,13 @@ export default function CardComponent({
             {millify(likes)}
             <FavoriteIcon />
           </IconButton>
-          <div className={classNames(styles.price)}>
-            {" "}
-            ~ {price} {currency}
-          </div>
         </div>
       </div>
-      <div className={classNames(styles.title)}>{name}</div>
+      <div className={classNames(styles.title)}>{title}</div>{" "}
+      <div className={classNames(styles.price)}>
+        {" "}
+        ~ {price} {currency}
+      </div>
     </Card>
   );
 }
