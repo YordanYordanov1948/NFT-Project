@@ -39,7 +39,7 @@ export default function CardComponent({
           {timeLeft && (
             <Countdown date={Date.now() + 5000} renderer={renderer}>
               <LiveTvIcon />
-              <div className="badge">
+              <div className={classNames(styles.badge)}>
                 <img
                   src="./images/nft.jpg/"
                   className={classNames(styles.media)}
