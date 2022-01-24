@@ -7,6 +7,7 @@ import millify from "millify";
 import classNames from "classnames";
 import styles from "./Card.module.scss";
 import Countdown from "react-countdown";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
 
 export default function CardComponent({
   name,
@@ -17,6 +18,13 @@ export default function CardComponent({
   price,
   currency,
 }) {
+  const renderer = ({ hours, minutes, seconds }) => {
+    return (
+      <span>
+        {hours}:{minutes}:{seconds}
+      </span>
+    );
+  };
   return (
     <div>
       <Card className={classNames(styles.card)}>
@@ -29,7 +37,8 @@ export default function CardComponent({
             className={classNames(styles.media)}
           ></img>
           {timeLeft && (
-            <Countdown>
+            <Countdown date={Date.now() + 5000} renderer={renderer}>
+              <LiveTvIcon />
               <div className="badge">
                 <img
                   src="./images/nft.jpg/"
