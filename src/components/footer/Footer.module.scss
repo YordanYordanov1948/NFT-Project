@@ -8,5 +8,12 @@
   background-color: colors.$background_paper;
 }
 
-.search {
+.border {
+  border-radius: 0px !important;
+}
+
+.button {
+  border-radius: 0px !important;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
