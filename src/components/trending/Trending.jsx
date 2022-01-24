@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 
-export default function Trending() {
+export default function Trending({ cards, title = "Trending" }) {
   return (
     <Container fixed>
       <Grid
@@ -17,10 +17,10 @@ export default function Trending() {
       >
         {" "}
         <Typography variant="h1" component="div" gutterBottom>
-          Trending
+          {title}
         </Typography>
         <Select sx={{ m: 1, width: 300 }}>
-          <MenuItem>This Week</MenuItem>
+          <MenuItem>{title}</MenuItem>
         </Select>{" "}
       </Grid>
     </Container>
