@@ -5,8 +5,10 @@ import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import CardComponent from "../card/Card";
+import classNames from "classnames";
+import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = "Trending" }) {
+export default function Trending({ cards }) {
   return (
     <Container>
       <Grid
@@ -15,13 +17,17 @@ export default function Trending({ cards = "Trending" }) {
         justifyContent="space-between"
         alignItems="baseline"
       >
-        {" "}
-        <Typography variant="h1" component="div" gutterBottom>
-          {cards}{" "}
+        <Typography
+          variant="h1"
+          component="div"
+          gutterBottom
+          className={classNames(styles.typography)}
+        >
+          {cards}
         </Typography>
-        <Select sx={{ m: 1, width: 300 }}>
+        <Select sx={{ m: 1, width: 300 }} className={classNames(styles.select)}>
           <MenuItem> {cards}</MenuItem>
-        </Select>{" "}
+        </Select>
       </Grid>
       <Grid container spacing={4}>
         <CardComponent title={"Clock"} />
