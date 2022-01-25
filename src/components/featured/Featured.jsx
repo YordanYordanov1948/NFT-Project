@@ -14,7 +14,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
   };
 }
 
-export default function CustomImageList() {
+export default function CustomImageList({ items = [] }) {
   return (
     <ImageList
       sx={{
