@@ -5,9 +5,16 @@ import styles from "./Step.module.scss";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
-export default function How(description, title, items = [], link) {
+export default function How({ description, title, items = [], link }) {
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
   return (
     <div className={classNames(styles.wrapper)}>
       {" "}
@@ -22,14 +29,18 @@ export default function How(description, title, items = [], link) {
           justifyContent="flex-start"
           alignItems="baseline"
         >
-          {" "}
-          <Typography>{description}</Typography>
-          <Typography>{title}</Typography>
-          <Typography>{link}</Typography>
-          <Typography>{items}</Typography>
+          <Grid item xs={2} padding={"20px"}>
+            <Item>{title}</Item>
+          </Grid>
+          <Grid item xs={2} padding={"20px"}>
+            <Item>{items}</Item>
+          </Grid>
+          <Grid item xs={6} padding={"20px"}>
+            <Item>{description}</Item>
+          </Grid>
           <Button variant="contained" disableElevation href={link}>
-            Disable elevation
-          </Button>
+            LEARN MORE
+          </Button>{" "}
         </Grid>
       </Container>
     </div>

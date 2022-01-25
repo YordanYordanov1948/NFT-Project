@@ -2,9 +2,9 @@ import React from "react";
 import Container from "@mui/material/Container";
 import styles from "./Step.module.scss";
 import classNames from "classnames";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 export default function Step({ number, title, description }) {
@@ -17,20 +17,32 @@ export default function Step({ number, title, description }) {
           justifyContent="space-around"
           alignItems="flex-end"
         >
-          <Card sx={{ minWidth: 275 }}>
-            <CardContent>
-              <Typography sx={{ fontSize: 2 }} gutterBottom>
-                {title}
-              </Typography>
-              <Typography
-                sx={{ mb: 1.5 }}
-                className={classNames(styles.number)}
-              >
-                {number}2
-              </Typography>
-              <Typography variant="body2">{description}</Typography>
-            </CardContent>
-          </Card>
+          <Paper sx={{ p: 2, maxWidth: 500, flexGrow: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm container>
+                <Grid item xs container direction="column" spacing={2}>
+                  <Grid item xs>
+                    <Typography
+                      gutterBottom
+                      variant="subtitle1"
+                      component="div"
+                    >
+                      {title}
+                    </Typography>
+
+                    <Typography variant="body2" color="text.secondary">
+                      {number}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" component="div">
+                    {description}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
         </Grid>
       </Container>
     </div>
