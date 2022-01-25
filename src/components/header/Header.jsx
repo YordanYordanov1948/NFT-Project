@@ -24,7 +24,6 @@ function Header() {
         <Grid container spacing={3}>
           <Grid item xs={4}>
             <Item>
-              {" "}
               <Search />
               Find items , users and activities
             </Item>
