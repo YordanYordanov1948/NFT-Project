@@ -19,29 +19,26 @@ export default function How({ description, title, items = [], link }) {
     <div>
       {" "}
       <Container>
+        <Step value={items} />
         <Grid
           container
           direction="column"
           justifyContent="flex-start"
           alignItems="baseline"
         >
-          <Grid xs={2}>
+          <Grid items xs={2}>
             <Item>{title}</Item>
           </Grid>
-          <Grid xs={2}>
-            <Item>
-              <Step />
-            </Item>
+          <Grid items xs={2}>
+            <Item>{items}</Item>
           </Grid>
-          <Grid xs={6}>
+          <Grid items xs={6}>
             <Item>{description}</Item>
           </Grid>
-          <Grid xs={6}>
-            <Item>
-              <Button variant="contained" disableElevation href={link}>
-                LEARN MORE
-              </Button>{" "}
-            </Item>
+          <Grid items xs={6}>
+            <Button variant="contained" disableElevation href={link}>
+              LEARN MORE
+            </Button>{" "}
           </Grid>
         </Grid>
       </Container>
