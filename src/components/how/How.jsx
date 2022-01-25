@@ -7,6 +7,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 export default function How({ description, title, items = [], link }) {
+  const numbers = items;
+
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -17,20 +19,24 @@ export default function How({ description, title, items = [], link }) {
     <div>
       {" "}
       <Container>
-        <Step />
         <Grid
           container
           direction="column"
           justifyContent="flex-start"
           alignItems="baseline"
         >
-          <Grid item xs={2} padding={"20px"}>
+          <Grid xs={2}>
             <Item>{title}</Item>
           </Grid>
-          <Grid item xs={2} padding={"20px"}>
-            <Item>{items}</Item>
+          <Grid xs={2}>
+            <Item>
+              {" "}
+              {numbers.map((items) => (
+                <Step value={items} />
+              ))}
+            </Item>
           </Grid>
-          <Grid item xs={6} padding={"20px"}>
+          <Grid xs={6}>
             <Item>{description}</Item>
           </Grid>
           <Button variant="contained" disableElevation href={link}>

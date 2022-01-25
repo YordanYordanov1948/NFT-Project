@@ -20,13 +20,13 @@ export default function Step({ number, title, description }) {
         alignItems="flex-end"
       >
         <Grid>
-          <Grid item xs>
+          <Grid xs={6}>
             <Item>{number}</Item>
           </Grid>
-          <Grid item xs={6}>
+          <Grid xs={6}>
             <Item>{title}</Item>
           </Grid>
-          <Grid item xs>
+          <Grid xs={6}>
             <Item>{description}</Item>
           </Grid>
         </Grid>
