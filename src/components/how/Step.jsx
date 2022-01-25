@@ -26,7 +26,7 @@ export default function Step({ number, title, description }) {
                 sx={{ mb: 1.5 }}
                 className={classNames(styles.number)}
               >
-                {number}
+                {number}2
               </Typography>
               <Typography variant="body2">{description}</Typography>
             </CardContent>
