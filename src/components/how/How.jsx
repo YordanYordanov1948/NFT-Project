@@ -23,15 +23,13 @@ export default function How({ title, description, items = [], link }) {
           justifyContent="flex-start"
           alignItems="flex-start"
         >
-          <Grid item xs={2}>
+          <Grid>
             <Item>{title}</Item>
           </Grid>
-          <Grid item xs={2}>
+          <Grid>
             <Item>{description}</Item>
           </Grid>
-          <Grid item xs={2}>
-            {items}
-          </Grid>
+          <Grid>{items}</Grid>
         </Grid>
         <Button variant="contained" href={link}>
           Link
