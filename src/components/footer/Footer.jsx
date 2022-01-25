@@ -35,7 +35,7 @@ export default function Footer() {
           </Grid>
           <Grid item xs={4}>
             {" "}
-            <Item className={classNames(styles.border)}>
+            <Item className={classNames(styles.button)}>
               <Button variant="contained">Cookie Policy</Button>
               <Button variant="contained">Privacy Policy</Button>
             </Item>
