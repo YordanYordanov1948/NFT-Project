@@ -5,6 +5,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 
+import Step from "./Step";
+
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -25,16 +27,17 @@ export default function How({ title, description, items = [], link }) {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={8}>
-            <Item>xs=8</Item>
+            <Item>{description}</Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>xs=4</Item>
+            <Item>{title}</Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>xs=4</Item>
-          </Grid>
-          <Grid item xs={8}>
-            <Item>xs=8</Item>
+            <Item>
+              {items.map((item) => (
+                <Step value={item} />
+              ))}
+            </Item>
           </Grid>
         </Grid>
       </Box>
