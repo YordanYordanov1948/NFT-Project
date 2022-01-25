@@ -1,11 +1,10 @@
 import Header from "../src/components/header/Header";
-import How from "../src/components/how/How";
-
+import Featured from "../src/components/featured/Featured";
 export default function Index() {
   return (
     <div>
       <Header />
-      <How />
+      <Featured />
     </div>
   );
 }
