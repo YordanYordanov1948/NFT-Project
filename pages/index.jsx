@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Step from "../src/components/step/Step";
+import How from "../src/components/how/How";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Step />
+      <How />
     </div>
   );
 }
