@@ -1,8 +1,6 @@
 import React from "react";
 import Step from "./Step";
 import Container from "@mui/material/Container";
-import styles from "./Step.module.scss";
-import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
@@ -16,12 +14,9 @@ export default function How({ description, title, items = [], link }) {
     color: theme.palette.text.secondary,
   }));
   return (
-    <div className={classNames(styles.wrapper)}>
+    <div>
       {" "}
-      <Container className={classNames(styles.container)} maxWidth="xl">
-        <Step />
-        <Step />
-        <Step />
+      <Container>
         <Step />
         <Grid
           container
