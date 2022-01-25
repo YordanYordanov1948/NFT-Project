@@ -5,6 +5,7 @@ import styles from "./Step.module.scss";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function How(description, title, items = [], link) {
   return (
@@ -22,6 +23,10 @@ export default function How(description, title, items = [], link) {
           alignItems="baseline"
         >
           {" "}
+          <Typography>{description}</Typography>
+          <Typography>{title}</Typography>
+          <Typography>{link}</Typography>
+          <Typography>{items}</Typography>
           <Button variant="contained" disableElevation href={link}>
             Disable elevation
           </Button>
