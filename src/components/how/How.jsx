@@ -30,18 +30,19 @@ export default function How({ description, title, items = [], link }) {
           </Grid>
           <Grid xs={2}>
             <Item>
-              {" "}
-              {numbers.map((items) => (
-                <Step value={items} />
-              ))}
+              <Step />
             </Item>
           </Grid>
           <Grid xs={6}>
             <Item>{description}</Item>
           </Grid>
-          <Button variant="contained" disableElevation href={link}>
-            LEARN MORE
-          </Button>{" "}
+          <Grid xs={6}>
+            <Item>
+              <Button variant="contained" disableElevation href={link}>
+                LEARN MORE
+              </Button>{" "}
+            </Item>
+          </Grid>
         </Grid>
       </Container>
     </div>
