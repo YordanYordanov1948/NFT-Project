@@ -2,6 +2,8 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Container from "@mui/material/Container";
+import classNames from "classnames";
+import styles from "./Featured.module.scss";
 import { useRouter } from "next/router";
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -17,30 +19,32 @@ export default function Featured({ items = [] }) {
   const router = useRouter();
 
   return (
-    <Container maxWidth="xl">
-      {items}
-      <ImageList
-        sx={{ width: 500, height: 450 }}
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item.image, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-              onClick={() => router.push("/about")}
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </Container>
+    <div className={classNames(styles.wrapper)}>
+      <Container className={classNames(styles.container)} maxWidth="xl">
+        {items}
+        <ImageList
+          sx={{ width: 500, height: 450 }}
+          variant="quilted"
+          cols={4}
+          rowHeight={121}
+        >
+          {itemData.map((item) => (
+            <ImageListItem
+              key={item.img}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
+              <img
+                {...srcset(item.image, 121, item.rows, item.cols)}
+                alt={item.title}
+                loading="lazy"
+                onClick={() => router.push("/about")}
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Container>
+    </div>
   );
 }
 
