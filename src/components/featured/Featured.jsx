@@ -1,7 +1,7 @@
 import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { Container } from "@mui/material";
+import Container from "@mui/material/Container";
 import { useRouter } from "next/router";
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -17,7 +17,7 @@ export default function Featured({ items = [] }) {
   const router = useRouter();
 
   return (
-    <Container>
+    <Container maxWidth="xl">
       {items}
       <ImageList
         sx={{ width: 500, height: 450 }}
