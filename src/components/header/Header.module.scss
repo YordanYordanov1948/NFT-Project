@@ -1,16 +1,13 @@
 @use "../../styles/colors";
 
 .wrapper {
-  padding: 20px;
   background-color: colors.$background_paper;
-}
-
-.container {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .grid {
   background-color: colors.$error_main;
+}
+
+.logo {
+  padding-left: 20px;
 }

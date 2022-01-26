@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import How from "../src/components/how/How";
+import Footer from "../src/components/footer/Footer";
 export default function Index() {
   return (
     <div>
       <Header />
-      <How />
+      <Footer />
     </div>
   );
 }

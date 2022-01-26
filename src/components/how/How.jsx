@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import Step from "./Step";
 
 export default function How({ description, title, items = [], link }) {
   const Item = styled(Paper)(({ theme }) => ({
@@ -13,15 +14,19 @@ export default function How({ description, title, items = [], link }) {
   }));
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={8}>
-        <Item>{description}</Item>
-      </Grid>
-      <Grid item xs={4}>
+    <Grid container>
+      <Grid item>
         <Item>{title}</Item>
       </Grid>
-      <Grid item xs={4}>
-        <Item>{items}</Item>
+      <Grid item>
+        <Item>{description}</Item>
+      </Grid>
+      <Grid item>
+        <Item>
+          {items.map((item, i) => {
+            return <Step key={i} number={i + 1} {...item} />;
+          })}
+        </Item>
       </Grid>
 
       <Button variant="contained" href={link}>

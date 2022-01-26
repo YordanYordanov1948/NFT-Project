@@ -1,0 +1,5 @@
+@use "../../styles/colors" as colors;
+
+.bg {
+  background-color: rgba(colors.$primary_main, 10%);
+}

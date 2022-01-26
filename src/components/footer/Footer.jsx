@@ -19,27 +19,23 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Footer() {
   return (
     <div className={classNames(styles.wrapper)}>
-      <Container className={classNames(styles.container)} maxWidth="xl">
-        <Grid container spacing={1}>
-          <Grid item xs={4}>
-            <Item className={classNames(styles.border)}>
-              <Logo type={"muted"} />
-            </Item>
-          </Grid>
+      <Container>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="flex-end"
+        >
+          <Logo type={"muted"} />
           <Grid item xs={4}>
             <Item>
               {" "}
               <Search />
-              Find items , users and activities
+              BOOM{" "}
             </Item>
           </Grid>
-          <Grid item xs={4}>
-            {" "}
-            <Item className={classNames(styles.button)}>
-              <Button variant="contained">Cookie Policy</Button>
-              <Button variant="contained">Privacy Policy</Button>
-            </Item>
-          </Grid>
+          <Button variant="contained">Cookie Policy</Button>
+          <Button variant="contained">Privacy Policy</Button>
         </Grid>
       </Container>
     </div>
