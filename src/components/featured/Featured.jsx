@@ -11,7 +11,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function Featured() {
+export default function Featured({ items = [] }) {
   return (
     <ImageList
       sx={{ width: 500, height: 450 }}
@@ -19,7 +19,7 @@ export default function Featured() {
       cols={4}
       rowHeight={121}
     >
-      {itemData.map((item) => (
+      {items.map((item) => (
         <ImageListItem
           key={item.image}
           cols={item.cols || 1}
