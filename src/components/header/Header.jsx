@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { Search } from "@mui/icons-material";
+import Typography from "@mui/material/Typography";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -19,24 +20,24 @@ const Item = styled(Paper)(({ theme }) => ({
 function Header() {
   return (
     <div className={classNames(styles.wrapper)}>
-      <Container className={classNames(styles.container)} maxWidth="xl">
-        <Logo />
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
+      <Container>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-around"
+          alignItems="baseline"
+        >
+          <Logo />
+          <Grid>
             <Item>
               <Search />
               Find items , users and activities
             </Item>
           </Grid>
-          <Grid item xs={4}>
-            {" "}
-            <Item>Home</Item>
-          </Grid>
-          <Grid item xs={4}>
-            <Item>Activity</Item>
-          </Grid>
+          <Typography>Home</Typography>
+          <Typography>Activity</Typography>
+          <Button variant="contained">Explore</Button>
         </Grid>
-        <Button variant="contained">Explore</Button>
       </Container>
     </div>
   );

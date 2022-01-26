@@ -4,6 +4,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { useRouter } from "next/router";
 
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {
@@ -14,14 +15,16 @@ function srcset(image, width, height, rows = 1, cols = 1) {
   };
 }
 
-export default function CustomImageList({ items = [] }) {
+export default function CustomImageList() {
+  const router = useRouter();
+
   return (
     <ImageList
       sx={{
-        width: 500,
-        height: 450,
-        // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
+        width: 350,
+        height: 550,
         transform: "translateZ(0)",
+        overflow: "hidden",
       }}
       rowHeight={200}
       gap={1}
@@ -33,9 +36,10 @@ export default function CustomImageList({ items = [] }) {
         return (
           <ImageListItem key={item.img} cols={cols} rows={rows}>
             <img
-              {...srcset(item.img, 250, 200, rows, cols)}
+              {...srcset(item.img, 400, 400, rows, cols)}
               alt={item.title}
               loading="lazy"
+              onClick={() => router.push("/about")}
             />
             <ImageListItemBar
               sx={{
