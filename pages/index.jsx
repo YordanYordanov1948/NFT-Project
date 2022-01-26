@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Footer from "../src/components/footer/Footer";
+import Featured from "../src/components/featured/Featured";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Footer />
+      <Featured />
     </div>
   );
 }
