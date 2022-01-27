@@ -1,10 +1,10 @@
 import Header from "../src/components/header/Header";
-import Featured from "../src/components/featured/Featured";
+import CollectorColumn from "../src/components/collectors/CollectorColumn";
 export default function Index() {
   return (
     <div>
       <Header />
-      <Featured />
+      <CollectorColumn />
     </div>
   );
 }
