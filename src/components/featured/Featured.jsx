@@ -54,6 +54,7 @@ export default function Featured({
   ],
 }) {
   const router = useRouter();
+
   return (
     <div>
       <Container>
@@ -62,10 +63,14 @@ export default function Featured({
           sx={{ width: 500, height: 450 }}
           variant="quilted"
           cols={4}
-          rowHeight={190}
+          rowHeight={121}
         >
           {items.map((item) => (
-            <ImageListItem key={item.image}>
+            <ImageListItem
+              key={item.image}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
               <img
                 src={item.image}
                 alt={item.title}
