@@ -6,7 +6,14 @@ export default function CollectorColumn({
 }) {
   return (
     <div>
-      <Collector type={type}></Collector>
+      {items.map((item, i) => {
+        <Collector
+          type={"light"}
+          key={i}
+          item={item}
+          index={i + 1}
+        ></Collector>;
+      })}
     </div>
   );
 }
