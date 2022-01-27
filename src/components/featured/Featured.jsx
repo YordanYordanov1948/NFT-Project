@@ -66,7 +66,7 @@ export default function Featured({ items = [] }) {
       cols={4}
       rowHeight={121}
     >
-      {itemData.map((item) => (
+      {items.map((item) => (
         <ImageListItem
           key={item.image}
           cols={item.cols || 1}
@@ -77,19 +77,7 @@ export default function Featured({ items = [] }) {
             alt={item.title}
           />
         </ImageListItem>
-      )) &&
-        items.map((item) => {
-          <ImageListItem
-            key={item.image}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item.image, 121, item.rows, item.cols)}
-              alt={item.title}
-            />
-          </ImageListItem>;
-        })}
+      ))}
     </ImageList>
   );
 }
