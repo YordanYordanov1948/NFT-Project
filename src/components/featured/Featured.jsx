@@ -66,16 +66,10 @@ export default function Featured({
         >
           {items.map((item) => (
             <ImageListItem key={item.image}>
-              <img src={item.image} alt={item.title} alt={item.title} />
-            </ImageListItem>
-          ))}
-          {item.map((items) => (
-            <ImageListItem key={items.image}>
               <img
-                src={items.image}
-                alt={items.title}
-                cols={items.cols || 3}
-                rows={items.rows || 2}
+                src={item.image}
+                alt={item.title}
+                alt={item.title}
                 onClick={() => router.push("/about")}
               />
             </ImageListItem>
