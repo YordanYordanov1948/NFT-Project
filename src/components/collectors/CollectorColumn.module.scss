@@ -6,7 +6,10 @@
 }
 
 .light {
-  background-color: rgba(colors.$background_default, 10%);
+  @mixin background-opacity($color, $opacity) {
+    background: $color;
+    background: rgba($color, $opacity);
+  }
 }
 
 .dark {
