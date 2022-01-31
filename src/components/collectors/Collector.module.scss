@@ -1,8 +1,8 @@
 @use "../../styles/colors" as colors;
 .light {
-  background-color: rgba(colors.$primary_main, 10%);
+  background-color: rgba(colors.$background_default, 20%);
 }
 
 .dark {
-  background-color: rgba(colors.$background_default, 10%);
+  background-color: rgba(colors.$background_default, 30%);
 }
