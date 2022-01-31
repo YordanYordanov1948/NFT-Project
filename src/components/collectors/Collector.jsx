@@ -7,6 +7,7 @@ export default function Collector({ name, avatar, verified, type, nftsCount }) {
       <User
         name={name}
         avatar={avatar}
+        type={type}
         verified={verified}
         nftsCount={nftsCount}
       />
