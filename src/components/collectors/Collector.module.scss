@@ -1,13 +1,8 @@
+@use "../../styles/colors" as colors;
 .light {
-  @mixin background-opacity($color, $opacity) {
-    background-color: $color;
-    background: rgba($color, $opacity);
-  }
+  background-color: rgba(colors.$primary_main, 10%);
 }
 
 .dark {
-  @mixin background-opacity($color) {
-    background-color: $color;
-    background-color: rgba($color);
-  }
+  background-color: rgba(colors.$background_default, 10%);
 }
