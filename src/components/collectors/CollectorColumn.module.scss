@@ -1,4 +1,14 @@
-.wrapper {
+@use "../../styles/colors" as colors;
+
+.container {
   padding: 20px;
   background-color: colors.$background_paper;
+}
+
+.light {
+  background-color: rgba(colors.$background_default, 20%);
+}
+
+.dark {
+  background-color: rgba(colors.$background_default, 30%);
 }
