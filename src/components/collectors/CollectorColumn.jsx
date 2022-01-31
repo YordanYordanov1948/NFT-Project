@@ -7,8 +7,8 @@ export default function CollectorColumn({ items = [] }) {
       {items.map((item, i) => {
         return (
           <Collector
-            key={item.id}
-            {...item}
+            key={item}
+            index={i + 1}
             type={i % 2 !== 0 ? "light" : ""}
           ></Collector>
         );
