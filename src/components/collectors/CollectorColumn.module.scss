@@ -2,14 +2,10 @@
 
 .container {
   padding: 20px;
-  background-color: colors.$background_paper;
 }
 
 .light {
-  @mixin background-opacity($color, $opacity) {
-    background: $color;
-    background: rgba($color, $opacity);
-  }
+  background-color: rgba(colors.$background_default, 10%);
 }
 
 .dark {
