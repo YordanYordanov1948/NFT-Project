@@ -10,8 +10,8 @@ export default function CollectorColumn({ items = [] }) {
         <Collector
           key={i}
           item={item}
-          index={i + 1}
-          type={i % 2 !== 0 ? classNames(styles.light) : "light"}
+          index={items}
+          type={type == classNames(styles.light)}
         ></Collector>
       ))}
     </div>
