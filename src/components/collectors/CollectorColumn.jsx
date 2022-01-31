@@ -11,7 +11,9 @@ export default function CollectorColumn({ items = [] }) {
           key={i}
           item={item}
           index={i + 1}
-          type={i % 2 !== 0 ? "light" : ""}
+          type={
+            i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
+          }
         ></Collector>
       ))}
     </div>
