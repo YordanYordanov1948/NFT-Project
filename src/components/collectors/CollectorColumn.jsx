@@ -1,14 +1,13 @@
 import React from "react";
 import Collector from "./Collector";
 
-export default function CollectorColumn({ items = [] }) {
+export default function CollectorColumn({ items }) {
   return (
     <div>
       {items.map((item, i) => (
         <Collector
-          key={i}
-          item={item}
-          index={i + 1}
+          key={item.id}
+          {...item}
           type={i % 2 !== 0 ? "light" : ""}
         ></Collector>
       ))}
