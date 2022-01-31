@@ -4,19 +4,18 @@ import classNames from "classnames";
 import styles from "./CollectorColumn.module.scss";
 
 export default function CollectorColumn({ items = [] }) {
-  console.log(items);
   return (
-    <div>
-      {items.map((item, i) => {
-        console.log(item);
-        return (
-          <Collector
-            key={item.id}
-            {...item}
-            type={i % 2 == 0 ? "light " : ""}
-          />
-        );
-      })}
+    <div className={classNames(styles.container)}>
+      {items.map((item, i) => (
+        <Collector
+          key={i}
+          item={item}
+          index={i + 1}
+          type={
+            i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
+          }
+        ></Collector>
+      ))}
     </div>
   );
 }
