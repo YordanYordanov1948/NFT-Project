@@ -1,10 +1,10 @@
 import React from "react";
 import User from "../user/User";
 
-export default function Collector({ type }) {
+export default function Collector({ name, avatar, verified, type }) {
   return (
     <div className="container">
-      <User type={type} />
+      <User name={name} avatar={avatar} verified={verified} type={type} />
     </div>
   );
 }
