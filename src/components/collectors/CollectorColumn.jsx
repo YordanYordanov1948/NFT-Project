@@ -1,11 +1,11 @@
 import React from "react";
 import Collector from "./Collector";
 import classNames from "classnames";
-import styles from "./Collector.module.scss";
+import styles from "./CollectorColumn.module.scss";
 
 export default function CollectorColumn({ items = [] }) {
   return (
-    <div className="container">
+    <div className={classNames(styles.container)}>
       {items.map((item, i) => (
         <Collector
           key={item}
