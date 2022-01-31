@@ -1,5 +1,8 @@
+import classNames from "classnames";
 import React from "react";
 import User from "../user/User";
+import styles from "./Example.module.scss";
+import classNames from "classnames";
 
 export default function Collector({ name, avatar, verified, type, nftsCount }) {
   return (
@@ -8,7 +11,7 @@ export default function Collector({ name, avatar, verified, type, nftsCount }) {
         name={name}
         avatar={avatar}
         verified={verified}
-        type={type}
+        type={type ? classNames(styles.light) : ""}
         nftsCount={nftsCount}
       />
     </div>
