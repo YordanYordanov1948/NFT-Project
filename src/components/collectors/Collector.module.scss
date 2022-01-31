@@ -1,3 +1,13 @@
 .light {
-  background-color: rgba(hex_value, opacity_value);
+  @mixin background-opacity($color, $opacity) {
+    background-color: $color;
+    background: rgba($color, $opacity);
+  }
+}
+
+.dark {
+  @mixin background-opacity($color) {
+    background-color: $color;
+    background-color: rgba($color);
+  }
 }
