@@ -8,9 +8,9 @@ export default function CollectorColumn({ items = [] }) {
     <div className={classNames(styles.container)}>
       {items.map((item, i) => (
         <Collector
-          key={item}
-          index={i + 1}
-          type={i % 2 !== 0 ? "light" : "dark"}
+          key={item.id}
+          {...item}
+          type={i % 2 !== 0 ? "light" : ""}
         ></Collector>
       ))}
     </div>
