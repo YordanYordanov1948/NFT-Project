@@ -1,6 +1,5 @@
 import React from "react";
 import Collector from "./Collector";
-import classNames from "classnames";
 import styles from "./CollectorColumn.module.scss";
 
 export default function CollectorColumn({ items = [] }) {
