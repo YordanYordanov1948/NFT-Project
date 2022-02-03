@@ -1,4 +1,9 @@
 @use "../../styles/colors" as colors;
 
-.container {
+.light {
+  background-color: rgba(colors.$background_default, 10%);
+}
+
+.dark {
+  background-color: colors.$background_paper;
 }
