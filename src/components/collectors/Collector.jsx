@@ -5,7 +5,12 @@ import styles from "./Collector.module.scss";
 
 export default function Collector({ name, avatar, verified, nftsCount, type }) {
   return (
-    <div className={classNames(styles.container)}>
+    <div
+      className={classNames(styles.container, {
+        [styles.dark]: type === "dark",
+        [styles.light]: type === "light",
+      })}
+    >
       <User
         name={name}
         avatar={avatar}
