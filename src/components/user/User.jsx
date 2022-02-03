@@ -4,8 +4,8 @@ import classNames from "classnames";
 import styles from "./User.module.scss";
 
 export default function User({
-  name = "",
-  info = "",
+  name = "BOOM",
+  info = 134,
   avatar = "",
   size = 55,
   verified = false,
