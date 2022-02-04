@@ -1,7 +1,7 @@
 @use "../../styles/colors" as colors;
 
 .container {
-  background-color: colors.$text_disabled;
+  background-color: rgba(colors.$text_disabled, 10%);
 }
 
 .light {
@@ -9,9 +9,9 @@
 }
 
 .dark {
-  background-color: colors.$background_paper;
+  background-color: rgba(colors.$background_paper, 10%);
 }
 
 .number {
-  background-color: colors.$primary_main;
+  background-color: rgba(colors.$primary_main, 10%);
 }
