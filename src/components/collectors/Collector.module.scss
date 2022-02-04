@@ -1,7 +1,7 @@
 @use "../../styles/colors" as colors;
 
 .container {
-  background-color: colors.$background_default;
+  background-color: colors.$text_disabled;
 }
 
 .light {
@@ -13,5 +13,5 @@
 }
 
 .number {
-  background-color: rgba(colors.$background_default, 20%);
+  background-color: colors.$primary_main;
 }
