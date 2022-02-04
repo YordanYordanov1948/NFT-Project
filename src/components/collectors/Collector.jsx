@@ -12,6 +12,7 @@ export default function Collector({ name, avatar, verified, nftsCount, type }) {
       })}
     >
       <User
+        className={classNames(styles.number)}
         name={name}
         avatar={avatar}
         verified={verified}
