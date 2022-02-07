@@ -27,6 +27,11 @@ export default function Index(props) {
     setUsers(dataUsers);
   }, []);
 
+  const [ntfs, setNtfs] = useState([]);
+  useEffect(() => {
+    setNtfs(dataNfts);
+  }, []);
+
   return (
     <div>
       <Header />
