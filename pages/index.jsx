@@ -30,9 +30,9 @@ export default function Index(props) {
   return (
     <div>
       <Header />
-      <Featured>{props.items}</Featured>
-      <Trending>{props.cards}</Trending>
-      <TopCollectors>{props.collectors}</TopCollectors>
+      <Featured items={props.items} />
+      <Trending></Trending>
+      <TopCollectors></TopCollectors>
       <How />
       <Auctions />
       <Footer />
