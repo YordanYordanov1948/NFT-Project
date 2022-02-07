@@ -1,9 +1,9 @@
-import Home from "./home/Home";
+import About from "./about";
 
 export default function Index() {
   return (
     <div>
-      <Home />
+      <About />
     </div>
   );
 }
