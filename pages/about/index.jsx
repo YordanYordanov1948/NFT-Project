@@ -15,7 +15,7 @@ import Footer from "../../src/components/footer/Footer";
 
 export default function About() {
   return (
-    <Container>
+    <div>
       <Header></Header>
       <Featured></Featured>
       <Trending></Trending>
@@ -23,6 +23,6 @@ export default function About() {
       <How />
       <Auctions />
       <Footer />
-    </Container>
+    </div>
   );
 }
