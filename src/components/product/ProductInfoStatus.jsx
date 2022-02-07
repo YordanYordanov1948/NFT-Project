@@ -5,7 +5,7 @@ import Chip from "@mui/material/Chip";
 
 export default function ProductInfoStatus() {
   return (
-    <div className={classNames(styles["product-info-status"])}>
+    <div>
       <Chip
         className={classNames(styles.status)}
         label="Chip Outlined"
