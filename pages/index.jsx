@@ -1,8 +1,8 @@
-import TopCollectors from "../src/components/collectors/TopCollectors";
+import Home from "../src/components/home/Home";
 export default function Index() {
   return (
     <div>
-      <TopCollectors />
+      <Home />
     </div>
   );
 }
