@@ -5,12 +5,21 @@ import TopCollectors from "../src/components/collectors/TopCollectors";
 import How from "../src/components/how/How";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
+import { useState, useEffect } from "react";
+import dataFeatured from "../data/featured.json";
+import dataTrending from "../data/trending.json";
+import dataUsers from "../data/users.json";
+import dataNfts from "../data/nfts.json";
 
 export default function Index() {
+  const [featuredCards, setFeaturedCards] = useState([]);
+  useEffect(() => {
+    setFeaturedCards(dataFeatured);
+  }, []);
   return (
     <div>
       <Header />
-      <Featured />
+      <Featured>{featuredCards}</Featured>
       <Trending />
       <TopCollectors />
       <How />
