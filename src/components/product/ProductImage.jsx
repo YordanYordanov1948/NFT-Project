@@ -3,7 +3,7 @@ import React from "react";
 export default function ProductImage({ url }) {
   return (
     <div>
-      <img className="image">{url}</img>
+      <h1>hello</h1>
     </div>
   );
 }
