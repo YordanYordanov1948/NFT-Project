@@ -6,7 +6,7 @@ import Chip from "@mui/material/Chip";
 export default function ProductInfoStatus() {
   return (
     <div>
-      <Chip className="status" />
+      <Chip className={classNames(styles["ProductInfoStatus_status"])} />
     </div>
   );
 }
