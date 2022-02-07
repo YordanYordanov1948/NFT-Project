@@ -4,8 +4,8 @@ import classNames from "classnames";
 
 export default function ProductImage({ url }) {
   return (
-    <div className={classNames(styles["product-image"])}>
-      <h1>hello</h1>
+    <div className={classNames(styles[`product-image`])}>
+      <img className={classNames(styles[`image`])}>{url}</img>
     </div>
   );
 }
