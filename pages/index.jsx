@@ -11,17 +11,28 @@ import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
 import dataNfts from "../data/nfts.json";
 
-export default function Index() {
+export default function Index(props) {
   const [featuredCards, setFeaturedCards] = useState([]);
   useEffect(() => {
     setFeaturedCards(dataFeatured);
   }, []);
+
+  const [trending, setTrending] = useState([]);
+  useEffect(() => {
+    setTrending(dataTrending);
+  }, []);
+
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    setUsers(dataUsers);
+  }, []);
+
   return (
     <div>
       <Header />
-      <Featured>{featuredCards}</Featured>
-      <Trending />
-      <TopCollectors />
+      <Featured>{props.items}</Featured>
+      <Trending>{props.cards}</Trending>
+      <TopCollectors>{props.collectors}</TopCollectors>
       <How />
       <Auctions />
       <Footer />
