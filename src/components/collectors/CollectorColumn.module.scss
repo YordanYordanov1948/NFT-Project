@@ -1,5 +1,6 @@
-@use "../../styles/colors" as colors;
+@use "../../styles/colors.scss" as colors;
 
 .container {
   padding: 20px;
+  background-color: colors.$text_disabled;
 }
