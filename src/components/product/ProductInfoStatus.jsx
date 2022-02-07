@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProductInfoPrice.module.scss";
+import styles from "./ProductInfoStatus.module.scss";
 import classNames from "classnames";
 import Chip from "@mui/material/Chip";
 
