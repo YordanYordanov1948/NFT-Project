@@ -19,7 +19,7 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames(styles["product-container"])}>
-      <Grid container>
+      <Grid>
         <Grid item xs={6}>
           <ProductImage url={source} />
         </Grid>
