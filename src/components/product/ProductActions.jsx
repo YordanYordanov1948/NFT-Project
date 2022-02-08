@@ -16,8 +16,7 @@ export default function ProductActions({
         <Grid item xs={7}>
           <Button
             className={classNames(styles.button)}
-            disabled={!isLive}
-            enable={isLive}
+            disabled={!isLive || isLive}
             onClick={onBuy}
             variant="contained"
           >
@@ -28,7 +27,6 @@ export default function ProductActions({
           <Button
             className={classNames(styles.button)}
             disabled={!isLive}
-            enable={isLive}
             onClick={onBid}
             color="success"
             variant="outlined"
