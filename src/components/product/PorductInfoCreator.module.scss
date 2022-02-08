@@ -1,0 +1,11 @@
+@use "../../styles/colors.scss";
+
+.product-info-creator {
+  background-color: colors.$background_paper;
+}
+.title {
+  color: colors.$text_secondary;
+}
+.user-container {
+  color: colors.$secondary_main;
+}
