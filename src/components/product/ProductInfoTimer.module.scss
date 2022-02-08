@@ -1,0 +1,15 @@
+@use "../../styles/colors.scss";
+
+.product-info-timer {
+  background-color: colors.$background_default;
+}
+.title {
+  color: colors.$background_default;
+}
+.timer {
+  color: colors.$warning_main;
+  background-color: colors.$error_main;
+}
+.active {
+  background-color: colors.$secondary_main;
+}
