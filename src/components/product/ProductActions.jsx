@@ -16,8 +16,8 @@ export default function ProductActions({
         <Grid item xs={7}>
           <Button
             className={classNames(styles.button)}
-            variant="outlined"
-            enable={isLive}
+            disabled={!isLive}
+            variant="contained"
             onClick={onBuy}
           >
             BUY FOR {buyAmount + " " + currency}
@@ -26,8 +26,9 @@ export default function ProductActions({
         <Grid item xs={5}>
           <Button
             className={classNames(styles.button)}
-            variant="outlined"
+            color="success"
             disabled={!isLive}
+            variant="outlined"
             onClick={onBid}
           >
             PLACE BID FOR {bidAmount + " " + currency}
