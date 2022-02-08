@@ -1,10 +1,9 @@
-import React from "react";
+import styles from "./ProductContainer.module.scss";
+import classNames from "classnames";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductTabs from "./ProductTabs";
 import ProductActions from "./ProductActions";
-import styles from "./ProductContainer.module.scss";
-import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 
 export default function ProductContainer({
@@ -22,7 +21,7 @@ export default function ProductContainer({
     <div className={classNames(styles["product-container"])}>
       <Grid container>
         <Grid item xs={6}>
-          <ProductImage url={source?.url} />
+          <ProductImage url={source} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
