@@ -28,6 +28,7 @@ export default function ProductActions({
           <Button
             className={classNames(styles.button)}
             disabled={!isLive || isLive}
+            enable={isLive}
             onClick={onBid}
             color="success"
             variant="outlined"
