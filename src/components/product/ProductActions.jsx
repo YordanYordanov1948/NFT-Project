@@ -27,7 +27,7 @@ export default function ProductActions({
         <Grid item xs={5}>
           <Button
             className={classNames(styles.button)}
-            isable={!isLive}
+            disable={!isLive}
             enable={isLive}
             onClick={onBid}
             color="success"
