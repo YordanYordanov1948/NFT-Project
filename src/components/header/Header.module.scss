@@ -1,13 +1,18 @@
 @use "../../styles/colors";
 
-.wrapper {
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   background-color: colors.$background_paper;
 }
 
-.grid {
-  background-color: colors.$error_main;
+.search {
+  background: colors.$background_default;
 }
 
-.logo {
-  padding-left: 20px;
+.link {
+  color: #fff;
+  margin-right: 25px;
 }

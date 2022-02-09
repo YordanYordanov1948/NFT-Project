@@ -1,46 +1,55 @@
 import React from "react";
-import Logo from "../logo/Logo";
-import Button from "@mui/material/Button";
-import styles from "./Header.module.scss";
-import classNames from "classnames";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import { Search } from "@mui/icons-material";
-import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import styles from "./Header.module.scss";
+import InputAdornment from "@mui/material/InputAdornment";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import SearchIcon from "@mui/icons-material/Search";
+import Button from "@mui/material/Button";
+import Link from "next/link";
+import Logo from "../logo/Logo";
+import classNames from "classnames";
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
-function Header() {
+export default function Header() {
   return (
-    <div className={classNames(styles.wrapper)}>
-      <Container>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-around"
-          alignItems="baseline"
-        >
-          <Logo />
-          <Grid>
-            <Item>
-              <Search />
-              Find items , users and activities
-            </Item>
-          </Grid>
-          <Typography>Home</Typography>
-          <Typography>Activity</Typography>
-          <Button variant="contained">Explore</Button>
+    <Container className={classNames(styles.container)} maxWidth="xxl">
+      <Grid container gap={2} display="flex" alignItems={"center"}>
+        <Grid item md={3} display={"flex"} justifyContent={"center"}>
+          <Logo type="default" />
         </Grid>
-      </Container>
-    </div>
+        <Grid item md={4} display="flex" justify="center">
+          <OutlinedInput
+            fullWidth
+            placeholder="Find items, users and activities"
+            className={classNames(styles.search)}
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchIcon style={{ color: "white" }} />
+              </InputAdornment>
+            }
+          />
+        </Grid>
+        <Grid
+          item
+          md={3}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"flex-end"}
+          height={45}
+        >
+          <Link href="/">
+            <a className={classNames(styles.link)}>Home</a>
+          </Link>
+          <Link href="/">
+            <a className={classNames(styles.link)}>Activity</a>
+          </Link>
+          <Link href="/">
+            <Button size="small" variant="contained">
+              Explore
+            </Button>
+          </Link>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
-
-export default Header;

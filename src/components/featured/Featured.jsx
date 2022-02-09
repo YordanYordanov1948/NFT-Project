@@ -1,38 +1,33 @@
 import React from "react";
-import Container from "@mui/material/Container";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import styles from "./Featured.module.scss";
+import classNames from "classnames";
+import { Container, ImageList, ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
 
 export default function Featured({ items = [] }) {
   const router = useRouter();
-
   return (
-    <div>
-      <Container>
-        {" "}
-        <ImageList
-          sx={{ width: 500, height: 450 }}
-          variant="quilted"
-          cols={4}
-          rowHeight={121}
-        >
-          {items.map((item) => (
-            <ImageListItem
-              key={item.image}
-              cols={item.cols || 1}
-              rows={item.rows || 1}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                alt={item.title}
-                onClick={() => router.push("/about")}
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Container>
-    </div>
+    <Container>
+      <ImageList variant="quilted" cols={6} gap={10}>
+        {items.map((item, index) => (
+          <ImageListItem
+            key={index}
+            cols={index === 0 ? 3 : item.cols || 1}
+            rows={index === 0 ? 3 : item.rows || 1}
+          >
+            <img
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(item.id);
+              }}
+              src={item.source.url}
+              alt={item.name}
+              loading="lazy"
+              className={classNames(styles.image)}
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </Container>
   );
 }
