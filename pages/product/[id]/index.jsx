@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../../../src/components/footer/Footer";
 import Header from "../../../src/components/header/Header";
 import ProductContainer from "../../../src/components/product/ProductContainer";
@@ -17,7 +16,7 @@ export default function index() {
   }, [pageID]);
 
   return (
-    <>
+    <div>
       <Header />
       <ProductContainer
         name={nft.name}
@@ -31,6 +30,6 @@ export default function index() {
         source={nft.source}
       />
       <Footer />
-    </>
+    </div>
   );
 }
