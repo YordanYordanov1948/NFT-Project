@@ -1,0 +1,32 @@
+@use "../../styles/colors.scss";
+
+.wrapper {
+  padding: 80px 0;
+}
+
+.howContainer {
+  background: colors.$primary_main;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.textContainer {
+  width: 20%;
+}
+
+.title {
+  line-height: 5rem;
+}
+
+.btn {
+  background: #fff;
+  color: colors.$primary_main;
+  margin-top: 2rem;
+}
+
+.description {
+  color: colors.$text_secondary !important;
+}

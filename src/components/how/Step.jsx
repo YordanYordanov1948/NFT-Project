@@ -1,28 +1,24 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import classNames from "classnames";
 import styles from "./Step.module.scss";
+import classNames from "classnames";
+import { Grid, Typography } from "@mui/material";
 
 export default function Step({ number, title, description }) {
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
-
   return (
-    <Grid container>
-      <Grid item className={classNames(styles.bg)}>
-        <Item>{number}</Item>
+    <Grid
+      sx={{ display: "flex", alignItems: "center" }}
+      className={classNames(styles.infoCard)}
+    >
+      <Grid item className={classNames(styles.number)}>
+        {number}
       </Grid>
-      <Grid>
-        <Item>{title}</Item>
-      </Grid>
-      <Grid>
-        <Item>{description}</Item>
+      <Grid item className={classNames(styles.text)}>
+        <Typography className={classNames(styles.title)} variant="h4">
+          {title}
+        </Typography>
+        <Typography className={classNames(styles.description)}>
+          {description}
+        </Typography>
       </Grid>
     </Grid>
   );
