@@ -20,9 +20,9 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames(styles["product-container"])}>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={6}>
-          <ProductImage url={source?.url} style="--aspect-ratio: 6/5;" />
+          <ProductImage url={source} style="--aspect-ratio: 6/5;" />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
