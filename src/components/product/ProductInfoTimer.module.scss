@@ -1,15 +1,21 @@
-@use "../../styles/colors.scss";
+@use "../../styles/colors";
 
 .product-info-timer {
-  background-color: colors.$background_default;
+  width: 250px;
+  background-color: colors.$background_paper;
 }
+
 .title {
-  color: colors.$background_default;
-}
-.timer {
-  color: colors.$warning_main;
-  background-color: colors.$error_main;
-}
-.active {
+  font-size: 1rem;
+  padding: 5px;
   background-color: colors.$secondary_main;
+}
+
+.timer {
+  width: 100%;
+  height: 100px;
+}
+
+.active {
+  background-color: aqua;
 }
