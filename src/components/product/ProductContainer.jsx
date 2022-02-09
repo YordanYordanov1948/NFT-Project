@@ -1,50 +1,7 @@
-import styles from "./ProductContainer.module.scss";
+import React from "react";
 import classNames from "classnames";
-import ProductImage from "./ProductImage";
-import ProductInfo from "./ProductInfo";
-import ProductTabs from "./ProductTabs";
-import ProductActions from "./ProductActions";
-import Grid from "@mui/material/Grid";
+import styles from "./ProductTabs.module.scss";
 
-export default function ProductContainer({
-  name,
-  owner,
-  price,
-  currency,
-  likes,
-  auction_end,
-  details,
-  bids,
-  source,
-}) {
-  return (
-    <div className={classNames(styles["product-container"])}>
-      <Grid>
-        <Grid item xs={6}>
-          <ProductImage url={source} />
-        </Grid>
-        <Grid item xs={5}>
-          <ProductInfo
-            title={name}
-            creator={owner}
-            price={price}
-            currency={currency}
-            likes={likes}
-            timeEnd={auction_end}
-            isLive={auction_end}
-            onTimeEnd={auction_end}
-          />
-          <ProductTabs bids={bids} text={details} />
-          <ProductActions
-            isLive={auction_end}
-            currency={currency}
-            buyAmount={bids}
-            bidAmount={bids}
-            onBid={bids}
-            onBuy={bids}
-          />
-        </Grid>
-      </Grid>
-    </div>
-  );
+export default function ProductContainer() {
+  return <div className={classNames(styles["product-container"])}></div>;
 }
