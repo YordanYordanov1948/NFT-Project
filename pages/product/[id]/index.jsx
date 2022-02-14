@@ -19,16 +19,7 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <ProductContainer
-        owner={nft.owner}
-        price={nft.price}
-        currency={nft.currency}
-        likes={nft.likes}
-        auction_end={nft.auction_end}
-        details={nft.details}
-        bids={nft.bids}
-        source={nft.source}
-      />
+      <ProductContainer />
       <Footer />
     </div>
   );
