@@ -20,7 +20,6 @@ export default function Index() {
     <div>
       <Header />
       <ProductContainer
-        name={nft.name}
         owner={nft.owner}
         price={nft.price}
         currency={nft.currency}
