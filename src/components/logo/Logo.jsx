@@ -1,12 +1,11 @@
 import React from "react";
 
-function Logo({ type }) {
-  return (
-    <div>
-      {type !== "muted" && <img src="images/logo.svg" />}
-      {type == "muted" && <img src="images/logo-muted.svg" />}
-    </div>
-  );
+export default function Logo({ type }) {
+  if (type === "muted") {
+    return (
+      <img alt="logo" src="/images/logo-muted.svg" width="100" height="90" />
+    );
+  } else {
+    return <img alt="logo" src="/images/logo.svg" width="100" height="90" />;
+  }
 }
-
-export default Logo;
