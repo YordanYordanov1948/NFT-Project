@@ -40,11 +40,16 @@ export default function Header() {
           <Link href="/">
             <a className={classNames(styles.link)}>Home</a>
           </Link>
-          <Link href="/">
+          <Link href="/activity">
             <a className={classNames(styles.link)}>Activity</a>
           </Link>
-          <Link href="/">
-            <Button size="small" variant="contained">
+          <Link href="/explore" passHref>
+            <Button
+              size="small"
+              variant="contained"
+              component="a"
+              disableElevation
+            >
               Explore
             </Button>
           </Link>

@@ -1,20 +1,21 @@
 import React from "react";
-import classNames from "classnames";
 import styles from "./Avatar.module.scss";
+import classNames from "classnames";
 
-function Avatar({ url, verified = false, size = 90 }) {
+export default function Avatar({ size = 90, url, verified = false }) {
   return (
-    <div>
-      {verified}
-      <div
-        className="avatar"
-        style={{ width: size + "px", height: size + "px" }}
-      >
-        <img className={classNames(styles.image)} src="images/avatar.png" />
-        <img className={classNames(styles.badge)} src="images/verified.svg" />
-      </div>
+    <div
+      className={classNames(styles.avatar)}
+      style={{ width: size + "px", height: size + "px" }}
+    >
+      <img src={url} className={classNames(styles.image)} alt="avatar" />
+      {verified && (
+        <img
+          src="/images/verified.svg"
+          alt="badge"
+          className={classNames(styles.badge)}
+        />
+      )}
     </div>
   );
 }
-
-export default Avatar;

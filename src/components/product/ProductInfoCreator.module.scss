@@ -1,11 +1,22 @@
-@use "../../styles/colors.scss";
+@use "../../styles/colors";
 
 .product-info-creator {
-  background-color: colors.$background_paper;
+  width: 400px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: rgba(colors.$primary_main, 20%);
 }
+
 .title {
-  color: colors.$text_secondary;
+  font-size: 1rem;
+  padding: 5px;
+  color: colors.$text_primary;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
 .user-container {
-  color: colors.$secondary_main;
+  padding: 10px;
+  width: 100%;
+  background-color: colors.$background_paper;
 }

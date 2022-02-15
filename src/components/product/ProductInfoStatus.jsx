@@ -1,12 +1,18 @@
 import React from "react";
-import classNames from "classnames";
 import styles from "./ProductInfoStatus.module.scss";
+import classNames from "classnames";
 import Chip from "@mui/material/Chip";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
-export default function ProductInfoStatus() {
+export default function ProductInfoStatus({ status }) {
   return (
     <div className={classNames(styles["product-info-status"])}>
-      <Chip className={classNames(styles.status)} />
+      <Chip
+        label="Live"
+        color="success"
+        className={classNames(styles.status)}
+        icon={<FiberManualRecordIcon />}
+      />
     </div>
   );
 }

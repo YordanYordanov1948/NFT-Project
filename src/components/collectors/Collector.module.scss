@@ -1,17 +1,17 @@
-@use "../../styles/colors.scss" as colors;
-
-.container {
-  background-color: colors.$text_disabled;
-}
+@use "../../styles/colors.scss";
 
 .light {
-  background-color: rgba(colors.$background_default, 10%);
+  background: rgba(colors.$primary_main, 10%) !important;
 }
 
-.dark {
-  background-color: rgba(colors.$background_paper, 10%);
+.collector {
+  display: flex;
+  align-items: center;
+  background: colors.$background_paper;
+  width: 300px;
 }
 
 .number {
-  background-color: colors.$primary_main;
+  padding: 20px;
+  background: rgba(colors.$primary_main, 10%);
 }

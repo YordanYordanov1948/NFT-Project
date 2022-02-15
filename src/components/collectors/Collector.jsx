@@ -1,24 +1,31 @@
 import React from "react";
-import User from "../user/User";
-import classNames from "classnames";
 import styles from "./Collector.module.scss";
+import classNames from "classnames";
+import User from "../user/User";
+import { Grid, Typography } from "@mui/material";
 
-export default function Collector({ name, avatar, verified, nftsCount, type }) {
+export default function Collector({
+  name,
+  nftsCount,
+  avatar,
+  verified,
+  id,
+  type,
+}) {
+  let lightClass = !type ? styles.light : "";
   return (
-    <div
-      className={classNames(styles.container, {
-        [styles.dark]: type === "dark",
-        [styles.light]: type === "light",
-      })}
-    >
-      <User
-        className={classNames(styles.number)}
-        name={name}
-        avatar={avatar}
-        verified={verified}
-        info={nftsCount}
-        type={type}
-      />
-    </div>
+    <Grid component="div" className={classNames(styles.collector, lightClass)}>
+      <Grid className={classNames(styles.number)} item>
+        <Typography variant="h3">{id}</Typography>
+      </Grid>
+      <Grid className={classNames(styles.user)} item>
+        <User
+          name={name}
+          info={nftsCount}
+          avatar={avatar}
+          verified={verified}
+        />
+      </Grid>
+    </Grid>
   );
 }

@@ -20,9 +20,9 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames(styles["product-container"])}>
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item xs={6}>
-          <ProductImage url={source} style="--aspect-ratio: 6/5;" />
+          <ProductImage url={source?.url} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
@@ -34,14 +34,8 @@ export default function ProductContainer({
             timeEnd={auction_end}
             isLive={auction_end}
             onTimeEnd={auction_end}
-            style="--aspect-ratio: 6/5;"
           />
-          <ProductTabs
-            bids={bids}
-            text={details}
-            style="--aspect-ratio: 6/5;"
-          />
-
+          <ProductTabs bids={bids} text={details} />
           <ProductActions
             isLive={auction_end}
             currency={currency}
@@ -49,7 +43,6 @@ export default function ProductContainer({
             bidAmount={bids}
             onBid={bids}
             onBuy={bids}
-            style="--aspect-ratio: 6/5;"
           />
         </Grid>
       </Grid>
