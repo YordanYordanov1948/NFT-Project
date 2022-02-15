@@ -1,21 +1,29 @@
 @use "../../styles/colors";
 
 .product-info-timer {
-  width: 250px;
+  width: 240px;
+  border-radius: 20px;
+  font-size: 5px;
+  text-align: center;
+  color: black;
   background-color: colors.$background_paper;
 }
 
 .title {
   font-size: 1rem;
   padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
   background-color: colors.$secondary_main;
 }
 
 .timer {
   width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
   height: 100px;
 }
 
 .active {
-  background-color: aqua;
+  background-color: green;
 }

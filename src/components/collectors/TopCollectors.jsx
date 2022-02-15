@@ -1,79 +1,46 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import Grid from "@mui/material/Grid";
-import CollectorColumn from "../collectors/CollectorColumn";
-import _ from "lodash";
+import styles from "./TopCollectors.module.scss";
+import classNames from "classnames";
+import {
+  Container,
+  FormControl,
+  Grid,
+  MenuItem,
+  Select,
+  Typography,
+} from "@mui/material";
+import CollectorColumn from "./CollectorColumn";
+import array from "lodash/array";
 
-export default function TopCollectors({ items, collectors }) {
-  const ITEM_HEIGHT = 48;
-  const ITEM_PADDING_TOP = 8;
-  const MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
-      },
-    },
-  };
-
-  const names = ["This Week"];
-
-  function getStyles(name, personName, theme) {
-    return {
-      fontWeight:
-        personName.indexOf(name) === -1
-          ? theme.typography.fontWeightRegular
-          : theme.typography.fontWeightMedium,
-    };
-  }
-
-  const collector = _.chunk(items, 3);
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(typeof value === "string" ? value.split(",") : value);
-  };
+export default function TopCollectors({ collectors }) {
   return (
-    <div>
-      <Grid
-        container
-        direction="row"
-        justifyContent="flex-end"
-        alignItems="flex-start"
-      >
-        <FormControl sx={{ m: 1, width: 300 }}>
-          <InputLabel id="demo-multiple-name-label">This Week</InputLabel>
-          <Select
-            labelId="demo-multiple-name-label"
-            id="demo-multiple-name"
-            multiple
-            value={personName}
-            onChange={handleChange}
-            input={<OutlinedInput label="Name" />}
-            MenuProps={MenuProps}
-          >
-            {names.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                style={getStyles(name, personName, theme)}
-              >
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+    <Container maxWidth="xl">
+      <Grid className={classNames(styles.header)} container>
+        <Grid item xs={12} sm={12} md={8} lg={6}>
+          <Typography variant="h1">Top Collectors</Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={4}
+          lg={6}
+          style={{ justifyContent: "flex-end", display: "flex" }}
+        >
+          <FormControl sx={{ m: 1, minWidth: 200 }}>
+            <Select displayEmpty>
+              <MenuItem>This week</MenuItem>
+              <MenuItem>This month</MenuItem>
+              <MenuItem>This year</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
       </Grid>
-      <CollectorColumn>{collectors}</CollectorColumn>
-    </div>
+      <Grid container gap={2}>
+        {array.chunk(collectors, 3).map((collector, index) => (
+          <CollectorColumn key={index} items={collector} />
+        ))}
+      </Grid>
+    </Container>
   );
 }

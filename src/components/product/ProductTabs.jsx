@@ -46,9 +46,9 @@ export default function ProductTabs({ text, bids = [] }) {
                 >
                   <TableCell component="th" scope="row">
                     <User
-                      name={bid.name}
-                      avatar={bid.avatar}
-                      verified={bid.verified}
+                      name={bid.user.name}
+                      avatar={bid.user.avatar}
+                      verified={bid.user.verified}
                     />
                   </TableCell>
                   <TableCell align="right">{bid.amount}</TableCell>
