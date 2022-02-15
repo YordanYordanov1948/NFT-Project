@@ -12,7 +12,7 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 
-export default function ProductTabs({ text, bids }) {
+export default function ProductTabs({ text, bids = [] }) {
   const [value, setValue] = useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);

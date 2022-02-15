@@ -5,7 +5,7 @@ import dataNfts from "../../../data/nfts.json";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function index() {
+export default function Product() {
   const router = useRouter();
   let pageID = router.query.id;
   const [nft, setNft] = useState([]);
@@ -16,20 +16,20 @@ export default function index() {
   }, [pageID]);
 
   return (
-    <>
+    <div>
       <Header />
       <ProductContainer
-        title={nft.title}
-        creator={nft.creator}
+        name={nft.name}
+        owner={nft.owner}
         price={nft.price}
         currency={nft.currency}
         likes={nft.likes}
-        timeEnd={nft.auction_end}
-        text={nft.details}
+        auction_end={nft.auction_end}
+        details={nft.details}
         bids={nft.bids}
-        url={nft.source}
+        source={nft.source}
       />
       <Footer />
-    </>
+    </div>
   );
 }
