@@ -19,15 +19,15 @@ export default function index() {
     <>
       <Header />
       <ProductContainer
-        name={nft.name}
-        owner={nft.owner}
+        title={nft.name}
+        creator={nft.owner}
         price={nft.price}
         currency={nft.currency}
         likes={nft.likes}
-        auction_end={nft.auction_end}
-        details={nft.details}
+        timeEnd={nft.auction_end}
+        text={nft.details}
         bids={nft.bids}
-        source={nft.source}
+        url={nft.source}
       />
       <Footer />
     </>
