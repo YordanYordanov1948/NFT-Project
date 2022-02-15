@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./ProductInfo.module.scss";
 import classNames from "classnames";
-import Stack from "@mui/material/Stack";
+import ProductInfoTitle from "./ProductInfoTitle";
 import ProductInfoPrice from "./ProductInfoPrice";
+import ProductInfoStatus from "./ProductInfoStatus";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoTimer from "./ProductInfoTimer";
-import ProductInfoStatus from "./ProductInfoStatus";
-import ProductInfoTitle from "./ProductInfoTitle";
-import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import { Grid } from "@mui/material";
 
 export default function ProductInfo({
   title,
@@ -20,30 +20,27 @@ export default function ProductInfo({
   timeEnd,
   isLive,
 }) {
+  console.log(creator);
   return (
     <div className={classNames(styles["product-info"])}>
       <ProductInfoTitle text={title} />
-      <Grid container>
-        <Grid item xs={5}>
+      <Stack direction="row" spacing={2} className={classNames(styles.stats)}>
+        <ProductInfoPrice amount={price} currency={currency} />
+        <ProductInfoLikes amount={likes} />
+      </Stack>
+      <Grid container spacing={2}>
+        <Grid item xs={7}>
           <ProductInfoCreator
-            name="test"
-            verified={true}
-            style="--aspect-ratio: 6/5;"
+            name={creator?.username}
+            avatar={creator?.avatar.url}
+            verified={creator?.confirmed}
           />
         </Grid>
-        <Grid item xs={7}>
-          <ProductInfoTimer
-            timeEnd={timeEnd}
-            onTimeEnd={onTimeEnd}
-            style="--aspect-ratio: 7/5;"
-          />
+        <Grid item xs={5}>
+          <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={onTimeEnd} />
         </Grid>
       </Grid>
-      <Stack spacing={2} className={classNames(styles.stats)}>
-        <ProductInfoPrice currency="ETH" />
-        <ProductInfoLikes />
-      </Stack>
-      {isLive && <ProductInfoStatus />}
+      {isLive && <ProductInfoStatus status={isLive} />}
     </div>
   );
 }
