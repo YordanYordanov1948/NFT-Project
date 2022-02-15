@@ -6,7 +6,7 @@ import Tab from "@mui/material/Tab";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import User from "../user/User";
-import { formatDistance, parseISO } from "date-fns";
+import { formatDistance, parseISO, subDays } from "date-fns";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
@@ -36,13 +36,27 @@ export default function ProductTabs({ text, bids }) {
         <TabPanel value="2">
           <Table>
             <TableBody>
-              <TableRow className={classNames(`table-row-}`)}>
-                <TableCell component="th" scope="row">
-                  <User />
-                </TableCell>
-                <TableCell align="right"></TableCell>
-                <TableCell align="right"></TableCell>
-              </TableRow>
+              {bids.map((bid, i) => (
+                <TableRow
+                  key={i}
+                  className={classNames(`table-row-${i}`)}
+                  style={{
+                    backgroundColor: i % 2 === 1 && "#4e24f2",
+                  }}
+                >
+                  <TableCell component="th" scope="row">
+                    <User
+                      name={bid.name}
+                      avatar={bid.avatar}
+                      verified={bid.verified}
+                    />
+                  </TableCell>
+                  <TableCell align="right">{bid.amount}</TableCell>
+                  <TableCell align="right">
+                    {formatDistance(parseISO(bid.date), new Date())}
+                  </TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </TabPanel>

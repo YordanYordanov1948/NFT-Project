@@ -19,8 +19,8 @@ export default function index() {
     <>
       <Header />
       <ProductContainer
-        title={nft.name}
-        creator={nft.owner}
+        title={nft.title}
+        creator={nft.creator}
         price={nft.price}
         currency={nft.currency}
         likes={nft.likes}
