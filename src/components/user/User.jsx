@@ -1,22 +1,23 @@
 import React from "react";
-import Avatar from "../avatar/Avatar";
-import classNames from "classnames";
+import { Container } from "@mui/material";
 import styles from "./User.module.scss";
+import classNames from "classnames";
+import Avatar from "../avatar/Avatar";
 
 export default function User({
-  name = "BOOM",
-  info = 134,
+  name = "",
+  info = "",
   avatar = "",
   size = 55,
   verified = false,
 }) {
   return (
-    <div className={classNames(styles.user)}>
-      {avatar}
-      {verified}
-      <Avatar />
-      <div className={classNames(styles.name)}>{name}</div>
-      <div className={classNames(styles.info)}>{info}</div>
-    </div>
+    <Container className={classNames(styles.user)}>
+      <Avatar url={avatar} verified={verified} size={size} />
+      <div className={classNames(styles.userData)}>
+        <p className={classNames(styles.name)}>{name}</p>
+        {info ? <p className={classNames(styles.info)}>{info} Items</p> : null}
+      </div>
+    </Container>
   );
 }
