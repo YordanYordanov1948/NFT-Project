@@ -17,7 +17,7 @@ export default function Product() {
   }, [pageID]);
 
   return (
-    <>
+    <div>
       <Header />
       <ProductContainer
         name={nft.name}
@@ -31,6 +31,6 @@ export default function Product() {
         source={nft.source}
       />
       <Footer />
-    </>
+    </div>
   );
 }
