@@ -3,7 +3,7 @@ import styles from "./ProfileCollection.module.scss";
 import classNames from "classnames";
 import { Container, Grid, Typography } from "@mui/material";
 import ProfileCollectionFilters from "./ProfileCollectionFilters";
-import CardComponent from "../card/Card";
+import Card from "../card/Card";
 
 export default function ProfileCollection({ user, filters, items }) {
   return (
@@ -21,7 +21,7 @@ export default function ProfileCollection({ user, filters, items }) {
           {items &&
             items.map((card, index) => (
               <Grid key={index} item xs={3}>
-                <CardComponent
+                <Card
                   name={card.name}
                   likes={card.likes}
                   mediaUrl={card.source?.url}
@@ -30,7 +30,7 @@ export default function ProfileCollection({ user, filters, items }) {
                   currency={card.currency}
                   timeLeft={card.auction_end}
                 />
-                <CardComponent
+                <Card
                   name={card.name}
                   likes={card.likes}
                   mediaUrl={card.source?.url}
