@@ -4,12 +4,12 @@ import Hero from "../../src/components/hero/Hero";
 import Description from "../../src/components/description/Description";
 import Footer from "../../src/components/footer/Footer";
 
-export default function How(props) {
+export default function How({ text, image }) {
   return (
     <div>
       <Header />
-      <Hero text={props.text} />
-      <Description text={props.text} image={props.image} />
+      <Hero text={text} />
+      <Description text={text} image={image} />
       <Footer />
     </div>
   );
