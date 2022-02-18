@@ -19,7 +19,7 @@ export default function ProfileCollection({ user, filters, items }) {
         </Grid>
         <Grid container>
           {items.map((card, index) => (
-            <Grid key={index} item xs={3}>
+            <Grid item xs={3}>
               <Card
                 name={card.name}
                 likes={card.likes}
@@ -28,19 +28,7 @@ export default function ProfileCollection({ user, filters, items }) {
                 price={card.price}
                 currency={card.currency}
                 timeLeft={card.auction_end}
-              />
-            </Grid>
-          ))}
-          {items.map((card, index) => (
-            <Grid key={index} item xs={3}>
-              <Card
-                name={card.name}
-                likes={card.likes}
-                mediaUrl={card.source?.url}
-                user={user}
-                price={card.price}
-                currency={card.currency}
-                timeLeft={card.auction_end}
+                key={index}
               />
             </Grid>
           ))}
