@@ -27,7 +27,7 @@ export default function CardComponent({
   return (
     <Card
       sx={{ maxWidth: 345, minHeight: 420 }}
-      className={timeLeft && classNames(styles.backgroundTimeLeft)}
+      className={classNames(styles.backgroundTimeLeft)}
       style={{ padding: "0 10px" }}
     >
       <CardHeader
