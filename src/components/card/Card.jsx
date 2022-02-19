@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.scss";
 import millify from "millify";
 import classNames from "classnames";
@@ -24,6 +24,8 @@ export default function CardComponent({
   currency,
   timeLeft,
 }) {
+  const [likesNumber, setLikesNumber] = useState(likes);
+
   return (
     <Card
       sx={{ maxWidth: 345, minHeight: 420 }}
@@ -60,7 +62,8 @@ export default function CardComponent({
           </Typography>
         </div>
         <Chip
-          label={millify(likes)}
+          onClick={() => setLikesNumber(likesNumber + 1)}
+          label={millify(likesNumber)}
           variant="outlined"
           className={classNames(styles.likes)}
         />
