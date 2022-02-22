@@ -18,6 +18,16 @@ export default function ProfileCollection({
       price: "~12.2",
       currency: "BTC",
     },
+
+    {
+      name: "String",
+      likes: 0,
+      user: "Jonny",
+      mediaUrl: "images/nft.jpg",
+      timeLeft: 100000000,
+      price: "~12.2",
+      currency: "BTC",
+    },
   ],
 }) {
   return (
