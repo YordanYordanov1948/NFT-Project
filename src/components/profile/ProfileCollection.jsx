@@ -3,6 +3,7 @@ import styles from "./ProfileCollection.module.scss";
 import classNames from "classnames";
 import { Container, Grid, Typography } from "@mui/material";
 import ProfileCollectionFilters from "./ProfileCollectionFilters";
+import User from "../user/User";
 import Card from "../card/Card";
 
 export default function ProfileCollection({
@@ -32,6 +33,7 @@ export default function ProfileCollection({
 }) {
   return (
     <div className={classNames(styles["profile-collection"])}>
+      <User name={user.name} info={user.info} />
       <Container>
         <Grid container>
           <Grid item xs={3}>
