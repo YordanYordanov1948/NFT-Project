@@ -44,7 +44,7 @@ export default function ProfileCollection({
           </Grid>
         </Grid>
         <Grid container>
-          {items.map((card, index) => (
+          {items.map((card, index) => {
             <Grid item xs={3}>
               <Card
                 key={index}
@@ -56,8 +56,8 @@ export default function ProfileCollection({
                 currency={card.currency}
                 timeLeft={card.auction_end}
               />
-            </Grid>
-          ))}
+            </Grid>;
+          })}
         </Grid>
       </Container>
     </div>
