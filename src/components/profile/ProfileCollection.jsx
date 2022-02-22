@@ -6,8 +6,8 @@ import ProfileCollectionFilters from "./ProfileCollectionFilters";
 import Card from "../card/Card";
 
 export default function ProfileCollection({
-  user,
-  filters,
+  user = { name: "J", info: "someInfo" },
+  filters = "name",
   items = [
     {
       name: "String",
@@ -38,7 +38,9 @@ export default function ProfileCollection({
             <Typography variant="h3">Collections</Typography>
           </Grid>
           <Grid item xs={9}>
-            <ProfileCollectionFilters filters={filters} />
+            <ProfileCollectionFilters
+              filters={filters}
+            ></ProfileCollectionFilters>
           </Grid>
         </Grid>
         <Grid container>
