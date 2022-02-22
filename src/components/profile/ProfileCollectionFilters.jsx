@@ -30,9 +30,9 @@ export default function ProfileCollectionFilters({ filters }) {
           <FormControl fullWidth>
             <InputLabel>Sort by</InputLabel>
             <Select label="Sort by" value={sort} onChange={handleSort}>
-              {filters.sort.map((i) => (
-                <MenuItem key={i.value} value={i.value}>
-                  {i.label}
+              {filters.sort.map((s) => (
+                <MenuItem key={s.value} value={s.value}>
+                  {s.label}
                 </MenuItem>
               ))}
             </Select>
