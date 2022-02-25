@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { MuiCard } from "@mui/material";
+import { Card as MuiCard } from "@mui/material";
 
 export default function Card({
   name,
