@@ -32,13 +32,7 @@ export default function ActivityFilters({ filters }) {
             onChange={handleSort}
             variant="outlined"
             color="primary"
-          >
-            {filters.sort.map((s) => (
-              <MenuItem key={s.value} value={s.value}>
-                {s.label}
-              </MenuItem>
-            ))}
-          </Select>
+          ></Select>
         </FormControl>
         <FormControl fullWidth>
           <InputLabel>Price range</InputLabel>
@@ -48,13 +42,7 @@ export default function ActivityFilters({ filters }) {
             onChange={handlePrice}
             variant="outlined"
             color="primary"
-          >
-            {filters.type.map((t) => (
-              <MenuItem key={t.value} value={t.value}>
-                {t.label}
-              </MenuItem>
-            ))}
-          </Select>
+          ></Select>
         </FormControl>
         <FormControl fullWidth>
           <TextField

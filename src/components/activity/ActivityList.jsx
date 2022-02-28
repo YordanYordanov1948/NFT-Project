@@ -4,19 +4,18 @@ import classNames from "classnames";
 import ActivityListItem from "./ActivityListItem";
 import { Stack } from "@mui/material";
 
-export default function ActivityList({ items }) {
+export default function ActivityList({ items = [] }) {
   return (
     <div className={classNames(styles["activity-list"])}>
       <Stack direction="column" spacing={2}>
-        {items.map((item, index) => (
+        {items.map((item, i) => {
           <ActivityListItem
-            key={index}
-            user={item.user}
             created_at={item.created_at}
-            nft={item.nft}
             type={item.type}
-          />
-        ))}
+            url={item.user.avatar.url}
+            key={i}
+          ></ActivityListItem>;
+        })}
       </Stack>
     </div>
   );
