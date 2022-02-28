@@ -22,6 +22,18 @@ export default function Index() {
     setUsers(dataUsers);
     setNfts(dataNfts);
   }, []);
+
+  let url = process.env.apiUrl;
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/featured")
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    result[0].rows = 2;
+    result[0].cols = 3;
+    setFeaturedCards(result);
+  }, []);
+
   return (
     <Fragment>
       <Header />
