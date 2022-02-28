@@ -1,41 +1,60 @@
-import React from "react";
 import styles from "./Trending.module.scss";
-import { MenuItem, Grid, Select, Container } from "@mui/material";
+import {
+  MenuItem,
+  Typography,
+  Grid,
+  FormControl,
+  Select,
+  Container,
+} from "@mui/material";
 import classNames from "classnames";
-import Card from "../card/Card";
+import CardComponent from "../card/Card";
 
-export default function Trending({ cards = [], sort = [] }) {
+export default function Trending({ cards = [] }) {
   return (
-    <div>
-      <Container maxWidth="false" className={classNames(styles.wrapper)}>
-        <div className={classNames(styles.trending)}>Trending</div>
-        <Select
-          className={classNames(styles.select)}
-          label="label"
-          displayEmpty="true"
+    <Container maxWidth="xl">
+      <Grid className={classNames(styles.header)} container>
+        <Grid item xs={12} sm={12} md={8} lg={6}>
+          <Typography variant="h1">Trending</Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={4}
+          lg={6}
+          style={{ justifyContent: "flex-end", display: "flex" }}
         >
-          {sort.map((arr, i) => (
-            <MenuItem value={arr.value} label={arr.label}>
-              {arr.label}
-            </MenuItem>
-          ))}
-        </Select>
-      </Container>
-      <Grid container spacing={2} className={classNames(styles.container)}>
-        {cards.map((card, i) => (
-          <Grid item xs={3} key={i}>
-            <Card
-              name={card.name}
-              like={card.likes}
-              mediaUrl={card.mediaUrl}
-              timeLeft={card.timeLeft}
-              price={card.price}
-              currency={card.currency}
-              user={card.user}
-            ></Card>
-          </Grid>
-        ))}
+          <FormControl sx={{ m: 1, minWidth: 200 }}>
+            <Select displayEmpty>
+              <MenuItem>This week</MenuItem>
+              <MenuItem>This month</MenuItem>
+              <MenuItem>This year</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
       </Grid>
-    </div>
+      <Container maxWidth="xl">
+        <Grid container spacing={2}>
+          {cards.map((card, index) => {
+            return (
+              <Grid key={index} item xs={12} md={3} lg={3}>
+                <CardComponent
+                  name={card.name}
+                  user={{
+                    avatar: card.owner.avatar.url,
+                    verified: card.owner.verified,
+                  }}
+                  mediaUrl={card.source.url}
+                  price={card.price}
+                  currency={card.currency}
+                  likes={card.likes}
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Container>
+    </Container>
   );
 }
