@@ -33,9 +33,6 @@ export default function Card({
       className={classNames(styles.backgroundTimeLeft)}
       style={{ padding: "0 10px" }}
     >
-      <CardHeader
-        avatar={<Avatar url={user.avatar} verified={user.verified} size={55} />}
-      />
       <div className={classNames(styles.liveContainer)}>
         {timeLeft && (
           <div className={classNames(styles.badge)}>
