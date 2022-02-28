@@ -8,7 +8,7 @@ import {
   Container,
 } from "@mui/material";
 import classNames from "classnames";
-import CardComponent from "../card/Card";
+import Card from "../card/Card";
 
 export default function Trending({ cards = [] }) {
   return (
@@ -39,7 +39,7 @@ export default function Trending({ cards = [] }) {
           {cards.map((card, index) => {
             return (
               <Grid key={index} item xs={12} md={3} lg={3}>
-                <CardComponent
+                <Card
                   name={card.name}
                   user={{
                     avatar: card.owner.avatar.url,
