@@ -14,6 +14,7 @@ import dataNfts from "../data/nfts.json";
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
   const [trendingCards, setTrendingCards] = useState([]);
+  const [trendingFilters, setTrendingFilters] = useState([]);
   const [users, setUsers] = useState([]);
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
@@ -34,12 +35,26 @@ export default function Index() {
     setFeaturedCards(result);
   }, []);
 
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/trending")
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    setTrendingCards(result);
+  }, []);
+
+  useEffect(async () => {
+    const res = await fetch("https://nft-auction.herokuapp.com/trending")
+      .then((response) => response.json())
+      .then((result) => result.filters.sort);
+    setTrendingFilters(res);
+  }, []);
+
   return (
     <Fragment>
       <Header />
       <div className="app">
         <Featured items={featuredCards} />
-        <Trending cards={trendingCards} />
+        <Trending cards={trendingCards} filters={trendingFilters} />
         <TopCollectors collectors={users} />
         <How />
         <Auctions cards={nfts} />
