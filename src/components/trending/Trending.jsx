@@ -10,7 +10,7 @@ import {
 import classNames from "classnames";
 import Card from "../card/Card";
 
-export default function Trending({ cards = [] }) {
+export default function Trending({ cards = [], sort = [] }) {
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>
@@ -25,13 +25,17 @@ export default function Trending({ cards = [] }) {
           lg={6}
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
-          <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <Select displayEmpty>
-              <MenuItem>This week</MenuItem>
-              <MenuItem>This month</MenuItem>
-              <MenuItem>This year</MenuItem>
-            </Select>
-          </FormControl>
+          <Select
+            className={classNames(styles.select)}
+            label="label"
+            displayEmpty="true"
+          >
+            {sort.map((arr, i) => (
+              <MenuItem value={arr.value} label={arr.label}>
+                {arr.label}
+              </MenuItem>
+            ))}
+          </Select>
         </Grid>
       </Grid>
       <Container maxWidth="xl">
