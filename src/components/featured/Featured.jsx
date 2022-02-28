@@ -12,8 +12,8 @@ export default function Featured({ items = [] }) {
         {items.map((item, index) => (
           <ImageListItem
             key={index}
-            cols={index === 0 ? 3 : item.cols || 1}
-            rows={index === 0 ? 3 : item.rows || 1}
+            cols={item.cols || 1}
+            rows={item.rows || 1}
           >
             <img
               onClick={(e) => {
