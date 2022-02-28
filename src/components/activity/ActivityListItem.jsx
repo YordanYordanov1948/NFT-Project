@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ActivityListItem.module.scss";
 import classNames from "classnames";
-import { formatDistance, parseISO, subDays } from "date-fns";
+import { formatDistance, parseISO } from "date-fns";
 import Avatar from "../avatar/Avatar";
 import Typography from "@mui/material/Typography";
 import Link from "../link/Link";
