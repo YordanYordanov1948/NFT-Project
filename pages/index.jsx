@@ -54,7 +54,7 @@ export default function Index() {
       <Header />
       <div className="app">
         <Featured items={featuredCards} />
-        <Trending cards={trendingItems} filters={trendingFilters} />
+        <Trending cards={trendingItems} sort={trendingFilters} />
         <TopCollectors collectors={users} />
         <How />
         <Auctions cards={nfts} />
