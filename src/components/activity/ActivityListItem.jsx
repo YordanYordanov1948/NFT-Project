@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "./ActivityListItem.module.scss";
 import classNames from "classnames";
-import { formatDistance, parseISO } from "date-fns";
+import styles from "./ActivityListItem.module.scss";
 import Avatar from "../avatar/Avatar";
-import Typography from "@mui/material/Typography";
 import Link from "../link/Link";
+import { formatDistance, parseISO } from "date-fns";
 
 export default function ActivityListItem({
   user,
@@ -14,26 +13,15 @@ export default function ActivityListItem({
 }) {
   return (
     <div className={classNames(styles["activity-list-item"])}>
-      <Avatar url={user.avatarUrl} verified={user.verified} />
-      <div>
-        <Typography variant="paragraph">
-          {user.name} {type === "like" ? "liked" : type === "buy" && "bought"}{" "}
-          <Link href="/" color="secondary">
-            {nft.name}
-          </Link>{" "}
-          by{" "}
-          <Link href="/" color="secondary">
-            {nft.user.name}
-          </Link>
-        </Typography>
-        <br />
-        <Typography
-          variant="paragraph"
-          className={classNames(styles.secondaryText)}
-        >
-          {formatDistance(parseISO(created_at), new Date())}
-        </Typography>
+      <div className={classNames(styles.wrapper)}>
+        <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
+        <div>{user.name}</div>
+        {type == "like" ? <p>liked</p> : <p>bought</p>}
+        <Link href="/">{nft.name} </Link>
+        <span>by</span>
+        <Link href="/"> {nft.owner.username}</Link>
       </div>
+      <div>{formatDistance(parseISO(created_at), new Date())} ago</div>
     </div>
   );
 }
