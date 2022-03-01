@@ -40,23 +40,42 @@ export default function Trending({ cards = [], sort = [] }) {
       </Grid>
       <Container maxWidth="xl">
         <Grid container spacing={2}>
-          {cards.map((card, index) => {
-            return (
-              <Grid key={index} item xs={12} md={3} lg={3}>
-                <Card
-                  name={card.name}
-                  user={{
-                    avatar: card.owner.avatar.url,
-                    verified: card.owner.verified,
-                  }}
-                  mediaUrl={card.source.url}
-                  price={card.price}
-                  currency={card.currency}
-                  likes={card.likes}
-                />
-              </Grid>
-            );
-          })}
+          <Grid item xs={3}>
+            <Card
+              name="Bored Ape"
+              likes="500"
+              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
+              price="~8.2"
+              currency="SOL"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Card
+              name="Bored Ape"
+              likes="500"
+              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
+              price="~8.2"
+              currency="SOL"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Card
+              name="Bored Ape"
+              likes="500"
+              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
+              price="~8.2"
+              currency="SOL"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Card
+              name="Bored Ape"
+              likes="500"
+              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
+              price="~8.2"
+              currency="SOL"
+            />
+          </Grid>
         </Grid>
       </Container>
     </Container>
