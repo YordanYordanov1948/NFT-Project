@@ -10,7 +10,7 @@ import {
 import classNames from "classnames";
 import Card from "../card/Card";
 
-export default function Trending({ cards = [], sort = [] }) {
+export default function Trending({ cards = [] }) {
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>
@@ -25,57 +25,32 @@ export default function Trending({ cards = [], sort = [] }) {
           lg={6}
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
-          <Select
-            className={classNames(styles.select)}
-            label="label"
-            displayEmpty="true"
-          >
-            {sort.map((arr, i) => (
-              <MenuItem value={arr.value} label={arr.label}>
-                {arr.label}
-              </MenuItem>
-            ))}
-          </Select>
+          <FormControl sx={{ m: 1, minWidth: 200 }}>
+            <Select displayEmpty>
+              <MenuItem>This week</MenuItem>
+              <MenuItem>This month</MenuItem>
+              <MenuItem>This year</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
       </Grid>
       <Container maxWidth="xl">
         <Grid container spacing={2}>
-          <Grid item xs={3}>
-            <Card
-              name="Bored Ape"
-              likes="500"
-              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
-              price="~8.2"
-              currency="SOL"
-            />
-          </Grid>
-          <Grid item xs={3}>
-            <Card
-              name="Bored Ape"
-              likes="500"
-              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
-              price="~8.2"
-              currency="SOL"
-            />
-          </Grid>
-          <Grid item xs={3}>
-            <Card
-              name="Bored Ape"
-              likes="500"
-              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
-              price="~8.2"
-              currency="SOL"
-            />
-          </Grid>
-          <Grid item xs={3}>
-            <Card
-              name="Bored Ape"
-              likes="500"
-              mediaUrl="https://ichef.bbci.co.uk/news/640/cpsprodpb/DBB7/production/_122074265_hi071843849.jpg"
-              price="~8.2"
-              currency="SOL"
-            />
-          </Grid>
+          {cards.map((card, index) => (
+            <Grid key={index} item xs={12} md={3} lg={3}>
+              <Card
+                name={card.name}
+                user={{
+                  avatar: card.owner.avatar.url,
+                  verified: card.owner.verified,
+                }}
+                mediaUrl={card.source.url}
+                price={card.price}
+                currency={card.currency}
+                likes={card.likes}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Container>
