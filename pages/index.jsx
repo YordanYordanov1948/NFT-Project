@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../src/components/header/Header";
 import Featured from "../src/components/featured/Featured";
 import Trending from "../src/components/trending/Trending";
@@ -50,16 +50,14 @@ export default function Index() {
   }, []);
 
   return (
-    <Fragment>
+    <div>
       <Header />
-      <div className="app">
-        <Featured items={featuredCards} />
-        <Trending cards={trendingItems} sort={trendingFilters} />
-        <TopCollectors collectors={users} />
-        <How />
-        <Auctions cards={nfts} />
-      </div>
+      <Featured items={featuredCards} />
+      <Trending cards={trendingItems} sort={trendingFilters} />
+      <TopCollectors collectors={users} />
+      <How />
+      <Auctions cards={nfts} />
       <Footer />
-    </Fragment>
+    </div>
   );
 }
