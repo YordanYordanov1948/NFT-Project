@@ -7,7 +7,9 @@ import { useRouter } from "next/router";
 
 export default function Product() {
   const router = useRouter();
-  let pageID = router.query.id;
+
+  let url = process.env.apiUrl;
+
   const [product, setProduct] = useState();
 
   useEffect(async () => {
