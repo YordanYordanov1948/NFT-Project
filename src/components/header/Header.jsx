@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import styles from "./Header.module.scss";
@@ -8,7 +9,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import Logo from "../logo/Logo";
-import classNames from "classnames";
 
 export default function Header() {
   return (

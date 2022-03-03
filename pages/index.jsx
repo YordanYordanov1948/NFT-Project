@@ -17,6 +17,8 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState();
   const [collectors, setCollectors] = useState();
   const [collectorFilters, setCollectorFilters] = useState();
+  const [auctions, setAuctions] = useState();
+  const [auctionFilters, setAuctionFilters] = useState();
 
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
@@ -68,6 +70,24 @@ export default function Index() {
     setCollectorFilters(result);
   }, []);
 
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/live-auctions"
+    )
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    setAuctions(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/live-auctions"
+    )
+      .then((response) => response.json())
+      .then((res) => res.filters);
+    setAuctionFilters(result);
+  }, []);
+
   return (
     <div>
       <Header />
@@ -78,7 +98,7 @@ export default function Index() {
         collectorFilters={collectorFilters}
       />
       <How />
-      <Auctions cards={nfts} />
+      <Auctions cards={auctions} auctionFilters={auctionFilters} />
       <Footer />
     </div>
   );
