@@ -12,15 +12,16 @@ import dataUsers from "../data/users.json";
 import dataNfts from "../data/nfts.json";
 
 export default function Index() {
-  const [featuredCards, setFeaturedCards] = useState([]);
-  const [trendingItems, setTrendingItems] = useState([]);
-  const [trendingFilters, setTrendingFilters] = useState([]);
-  const [users, setUsers] = useState([]);
+  const [featuredCards, setFeaturedCards] = useState();
+  const [trendingItems, setTrendingItems] = useState();
+  const [trendingFilters, setTrendingFilters] = useState();
+  const [collectors, setCollectors] = useState();
+  const [collectorFilters, setCollectorFilters] = useState();
+
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
     setFeaturedCards(dataTrending);
     setTrendingItems(dataFeatured);
-    setUsers(dataUsers);
     setNfts(dataNfts);
   }, []);
 
@@ -49,12 +50,33 @@ export default function Index() {
     setTrendingFilters(res);
   }, []);
 
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/top-collectors"
+    )
+      .then((response) => response.json())
+      .then((res) => res.users);
+    setCollectors(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/top-collectors"
+    )
+      .then((response) => response.json())
+      .then((res) => res.filters);
+    setCollectorFilters(result);
+  }, []);
+
   return (
     <div>
       <Header />
       <Featured items={featuredCards} />
       <Trending cards={trendingItems} sort={trendingFilters} />
-      <TopCollectors collectors={users} />
+      <TopCollectors
+        collectors={collectors}
+        collectorFilters={collectorFilters}
+      />
       <How />
       <Auctions cards={nfts} />
       <Footer />
