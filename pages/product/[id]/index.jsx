@@ -8,19 +8,19 @@ import { useRouter } from "next/router";
 export default function Product() {
   const router = useRouter();
   let pageID = router.query.id;
-  const [nft, setNft] = useState([]);
+  const [product, setProduct] = useState();
 
   useEffect(async () => {
     const result = await fetch("https://nft-auction.herokuapp.com/nfts/{id}")
       .then((response) => response.json())
       .then((res) => res.filters);
-    setNft(result);
+    setProduct(result);
   }, []);
 
   return (
     <div>
       <Header />
-      <ProductContainer product={nft} />
+      <ProductContainer product={product} />
       <Footer />
     </div>
   );
