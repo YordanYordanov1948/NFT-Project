@@ -13,9 +13,9 @@ export default function Product() {
   const [product, setProduct] = useState();
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/nfts/{id}")
+    const result = await fetch("https://nft-auction.herokuapp.com/nfts/367")
       .then((response) => response.json())
-      .then((res) => res.filters);
+      .then((res) => res);
     setProduct(result);
   }, []);
 
