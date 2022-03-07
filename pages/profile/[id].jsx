@@ -22,7 +22,7 @@ export default function profile() {
     const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
       .then((response) => response.json())
       .then((res) => res.users);
-    activityFilters(result);
+    profileFilters(result);
   }, []);
 
   return (
