@@ -8,11 +8,21 @@ import profileData from "../../data/profile.json";
 import filterData from "../../data/filtersProfile.json";
 import { useState, useEffect } from "react";
 export default function profile() {
-  const [profile, setProfile] = useState([]);
   const [filters, setFilters] = useState(null);
   useEffect(() => {
-    setProfile(profileData);
+    profileFilters(profileData);
     setFilters(filterData);
+  }, []);
+
+  let url = process.env.apiUrl;
+
+  const [profile, profileFilters] = useState([]);
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
+      .then((response) => response.json())
+      .then((res) => res.activities);
+    activityFilters(result);
   }, []);
 
   return (

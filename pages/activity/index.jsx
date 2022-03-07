@@ -8,21 +8,13 @@ import Footer from "../../src/components/footer/Footer";
 export default function Activity() {
   let url = process.env.apiUrl;
 
-  const [activity, setActivity] = useState([]);
-  const [activityFilters, setActivityFilters] = useState([]);
+  const [activity, activityFilters] = useState([]);
 
   useEffect(async () => {
     const result = await fetch("https://nft-auction.herokuapp.com/activities")
       .then((response) => response.json())
       .then((res) => res.activities);
-    setActivity(result);
-  }, []);
-
-  useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/activities")
-      .then((response) => response.json())
-      .then((res) => res.filters.sort);
-    setActivityFilters(result);
+    activityFilters(result);
   }, []);
 
   return (
