@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./TopCollectors.module.scss";
 import classNames from "classnames";
 import {
@@ -11,8 +11,14 @@ import {
 } from "@mui/material";
 import CollectorColumn from "./CollectorColumn";
 import array from "lodash/array";
+import InputLabel from "@mui/material/InputLabel";
 
 export default function TopCollectors({ collectors }) {
+  const [sort, setSort] = useState("");
+
+  const handleChange = (event) => {
+    setSort(event.target.value);
+  };
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>
@@ -28,10 +34,11 @@ export default function TopCollectors({ collectors }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <Select displayEmpty>
-              <MenuItem>This week</MenuItem>
-              <MenuItem>This month</MenuItem>
-              <MenuItem>This year</MenuItem>
+            <InputLabel>Sort By</InputLabel>
+            <Select displayEmpty onChange={handleChange} value={sort}>
+              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={"This month"}>This month</MenuItem>
+              <MenuItem value={"This year"}>This year</MenuItem>
             </Select>
           </FormControl>
         </Grid>

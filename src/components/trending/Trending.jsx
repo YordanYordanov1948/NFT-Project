@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from "./Trending.module.scss";
 import {
   MenuItem,
@@ -9,8 +10,14 @@ import {
 } from "@mui/material";
 import classNames from "classnames";
 import Card from "../card/Card";
+import InputLabel from "@mui/material/InputLabel";
 
 export default function Trending({ cards = [] }) {
+  const [week, setWeek] = useState("");
+
+  const handleChange = (event) => {
+    setWeek(event.target.value);
+  };
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>
@@ -26,10 +33,11 @@ export default function Trending({ cards = [] }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <Select displayEmpty>
-              <MenuItem>This week</MenuItem>
-              <MenuItem>This month</MenuItem>
-              <MenuItem>This year</MenuItem>
+            <InputLabel>This Week</InputLabel>
+            <Select displayEmpty onChange={handleChange} value={week}>
+              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={"This month"}>This month</MenuItem>
+              <MenuItem value={"This year"}>This year</MenuItem>
             </Select>
           </FormControl>
         </Grid>

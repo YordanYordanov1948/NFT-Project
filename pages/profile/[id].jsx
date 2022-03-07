@@ -7,7 +7,7 @@ import Footer from "../../src/components/footer/Footer";
 import profileData from "../../data/profile.json";
 import filterData from "../../data/filtersProfile.json";
 import { useState, useEffect } from "react";
-export default function profile() {
+export default function Profile() {
   const [filters, setFilters] = useState(null);
   useEffect(() => {
     profileFilters(profileData);
