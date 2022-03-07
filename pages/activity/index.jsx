@@ -22,7 +22,7 @@ export default function Activity() {
       <Header />
       <Hero text={"Activity"} />
       <ActivityFilters />
-      <ActivityList list={activity}></ActivityList>
+      <ActivityList list={activity} />
       <Footer />
     </div>
   );
