@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Auctions.module.scss";
 import {
   MenuItem,
@@ -10,8 +10,14 @@ import {
 } from "@mui/material";
 import classNames from "classnames";
 import CardComponent from "../card/Card";
+import InputLabel from "@mui/material/InputLabel";
 
 export default function Auctions({ cards = [] }) {
+  const [price, setPrice] = useState("");
+
+  const handleChange = (event) => {
+    setPrice(event.target.value);
+  };
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>
@@ -27,15 +33,16 @@ export default function Auctions({ cards = [] }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <Select displayEmpty>
-              <MenuItem>This week</MenuItem>
-              <MenuItem>This month</MenuItem>
-              <MenuItem>This year</MenuItem>
+            <InputLabel>Price Range</InputLabel>
+            <Select displayEmpty onChange={handleChange} value={price}>
+              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={"This month"}>This month</MenuItem>
+              <MenuItem value={"This year"}>This year</MenuItem>
             </Select>
           </FormControl>
         </Grid>
       </Grid>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" className={classNames(styles.container)}>
         <Grid container spacing={2}>
           {cards.map((card, index) => (
             <Grid key={index} item xs={12} md={3} lg={3}>
