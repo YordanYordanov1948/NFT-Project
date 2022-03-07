@@ -21,7 +21,7 @@ export default function profile() {
   useEffect(async () => {
     const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
       .then((response) => response.json())
-      .then((res) => res.activities);
+      .then((res) => res.users);
     activityFilters(result);
   }, []);
 
