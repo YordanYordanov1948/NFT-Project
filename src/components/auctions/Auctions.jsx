@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import classNames from "classnames";
 import CardComponent from "../card/Card";
-import InputLabel from "@mui/material/InputLabel";
 
 export default function Auctions({ cards = [] }) {
   const [price, setPrice] = useState("");
@@ -33,9 +32,8 @@ export default function Auctions({ cards = [] }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <InputLabel>Price Range</InputLabel>
             <Select displayEmpty onChange={handleChange} value={price}>
-              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={""}>Price Range</MenuItem>
               <MenuItem value={"This month"}>This month</MenuItem>
               <MenuItem value={"This year"}>This year</MenuItem>
             </Select>

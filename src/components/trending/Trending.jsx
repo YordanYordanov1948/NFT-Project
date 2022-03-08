@@ -33,9 +33,8 @@ export default function Trending({ cards = [] }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <InputLabel>This Week</InputLabel>
             <Select displayEmpty onChange={handleChange} value={week}>
-              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={""}>This Week</MenuItem>
               <MenuItem value={"This month"}>This month</MenuItem>
               <MenuItem value={"This year"}>This year</MenuItem>
             </Select>

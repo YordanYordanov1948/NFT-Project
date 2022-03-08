@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import CollectorColumn from "./CollectorColumn";
 import array from "lodash/array";
-import InputLabel from "@mui/material/InputLabel";
 
 export default function TopCollectors({ collectors }) {
   const [sort, setSort] = useState("");
@@ -34,9 +33,8 @@ export default function TopCollectors({ collectors }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <InputLabel>Sort By</InputLabel>
             <Select displayEmpty onChange={handleChange} value={sort}>
-              <MenuItem value={"This week"}>This week</MenuItem>
+              <MenuItem value={""}>Sort By</MenuItem>
               <MenuItem value={"This month"}>This month</MenuItem>
               <MenuItem value={"This year"}>This year</MenuItem>
             </Select>
