@@ -4,8 +4,6 @@ import ProfileHero from "../../src/components/profile/ProfileHero";
 import ProfileUser from "../../src/components/profile/ProfileUser";
 import ProfileCollection from "../../src/components/profile/ProfileCollection";
 import Footer from "../../src/components/footer/Footer";
-import profile from "../../data/profile.json";
-import classNames from "classnames";
 
 export default function Profile() {
   let url = process.env.apiUrl;
@@ -31,7 +29,7 @@ export default function Profile() {
     <div>
       <Header />
       <ProfileHero />
-      <ProfileUser name="NFT" info="NFT" />
+      <ProfileUser />
       <ProfileCollection user={profile} filters={profileFilters} />
       <Footer />
     </div>
