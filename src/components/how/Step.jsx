@@ -1,25 +1,24 @@
 import React from "react";
-import styles from "./Step.module.scss";
+import { Grid } from "@mui/material";
 import classNames from "classnames";
-import { Grid, Typography } from "@mui/material";
+import styles from "./Step.module.scss";
 
-export default function Step({ number, title, description }) {
+export default function Step({
+  number = "String",
+  title = "String",
+  description = "String",
+}) {
   return (
-    <Grid
-      sx={{ display: "flex", alignItems: "center" }}
-      className={classNames(styles.infoCard)}
-    >
-      <Grid item className={classNames(styles.number)}>
-        {number}
+    <div>
+      <Grid container className={classNames(styles.container)}>
+        <Grid item className={classNames(styles.wrapper)}>
+          <div className={classNames(styles.number)}>{number}</div>
+          <div className={classNames(styles.p)}>
+            <h1 className={classNames(styles.title)}>{title}</h1>
+            <p className={classNames(styles.span)}>{description}</p>
+          </div>
+        </Grid>
       </Grid>
-      <Grid item className={classNames(styles.text)}>
-        <Typography className={classNames(styles.title)} variant="h4">
-          {title}
-        </Typography>
-        <Typography className={classNames(styles.description)}>
-          {description}
-        </Typography>
-      </Grid>
-    </Grid>
+    </div>
   );
 }

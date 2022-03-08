@@ -1,4 +1,6 @@
-.header {
-  padding: 20px 0;
-  margin-bottom: 30px;
+.wrapper {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 25px;
 }
