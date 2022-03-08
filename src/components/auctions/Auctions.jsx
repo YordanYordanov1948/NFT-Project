@@ -33,7 +33,7 @@ export default function Auctions({ cards = [] }) {
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
             <Select displayEmpty onChange={handleChange} value={price}>
-              <MenuItem value={""}>Price Range</MenuItem>
+              <MenuItem value={""}>Price range</MenuItem>
               <MenuItem value={"This month"}>This month</MenuItem>
               <MenuItem value={"This year"}>This year</MenuItem>
             </Select>
