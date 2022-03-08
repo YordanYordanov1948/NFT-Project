@@ -1,5 +1,14 @@
 .profile-collection-filters {
   width: 100%;
-  background-color: aqua;
-  color: aliceblue;
+}
+.search-bar {
+  width: 30%;
+  margin: 10px !important;
+  background-color: #181828;
+  border-radius: 20px;
+}
+
+.profile-collection-filters {
+  display: flex;
+  justify-content: flex-end;
 }
